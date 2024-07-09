@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="rzera">
+    <file>resized_rzera_logo.png</file>
+    <file>resized_csns.png</file>
+    <file>resized_MPI_logo.png</file>
+  </qresource>
+</RCC>
