@@ -1,0 +1,14 @@
+{
+    "create_time": "2023-10-06 10:09:19",
+    "redis_data": {
+        "mode": "standalone",
+        "password": "sanlie_123",
+        "master_name": "mymaster",
+        "servers": [
+            {
+                "host": "10.1.37.237",
+                "port": "6379"
+            }
+        ]
+    }
+}

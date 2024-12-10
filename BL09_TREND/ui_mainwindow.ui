@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>392</width>
+    <height>663</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RZera</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralwidget{
+background-color: rgb(255, 255, 255);}
+
+QTabWidget {
+    background-color: none; /* 不设置背景色，使用默认样式 */
+}</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="logo/logo.qrc">:/rzera/resized_csns.png</pixmap>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:/rzera/resized_rzera_logo.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="logo/logo.qrc">:/rzera/resized_rzera_logo.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Instrument</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="instru_select">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <item>
+            <property name="text">
+             <string>BL09_TREND</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="reduction_open">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>392</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuRongzai">
+    <property name="title">
+     <string>Rongzai</string>
+    </property>
+   </widget>
+   <addaction name="menuRongzai"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="offset_correct">
+   <property name="text">
+    <string>offset correct</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="logo/logo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,44 @@
+{
+  "save_path": "../output/BL09",
+  "param_path": "../param_data/BL09/instrumentFiles",
+  "evt_path": "",
+  "data_path": "D:\\documents\\CSNS_data\\BL09\\nxsdata",
+  "cal_path": "..\\param_Data\\BL09\\offsetFiles_RUN0000078",
+  "has_cal": true,
+  "is_batch": false,
+  "time_slice": false,
+  "sam_run": [
+    "RUN0000078"
+  ],
+  "v_run": [
+  ],
+  "samBG_run": [],
+  "vBG_run": [],
+  "samBG_run_mode": "nxs",
+  "vBG_run_mode": "nxs",
+  "v_run_mode": "dat",
+  "norm_by_pc": false,
+  "rebin_mode": "uniform",
+  "scale_sam_bg": 0.5,
+  "scale_v_bg": 0.5,
+  "T0_offset": 0,
+  "wave_max": 7.9,
+  "wave_min": 0.1,
+  "data_scale": 1,
+  "d_rebin": {},
+  "vanadium_name": "VNi",
+  "vanadium_correction": {
+    "atten_xs": 2.8,
+    "scatt_xs": 5.1,
+    "density_num": 0.031724,
+    "radius": 0.3,
+    "beam_height": 3,
+    "do_correction": true
+  },
+  "slice_part": {
+    "evt_file_num" : 3,
+    "slice_info" : [[0,72,1],[72,133,1]],
+    "start_pulseID" : 2781496806,
+    "tof_step": 8
+  }
+}

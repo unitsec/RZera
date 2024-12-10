@@ -1,0 +1,2909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>789</width>
+    <height>962</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>offset creation</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_9">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame {
+	background-color: rgb(248, 254, 255);
+	border: 2px solid rgb(205, 255, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,1,1,1">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_input_and_output">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Input and Output</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5">
+        <item>
+         <widget class="QPushButton" name="select_run">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Select Run File</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="select_run_text">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>3ds</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,5">
+        <item>
+         <widget class="QPushButton" name="select_pid">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Select Instru File</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="select_pid_text">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>3ds</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,5">
+        <item>
+         <widget class="QPushButton" name="select_path">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Save and Check Path</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="select_path_text">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>3ds</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_8">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_8 {
+	background-color: rgb(248, 254, 255);
+	border: 2px solid rgb(205, 255, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_pixel_group_information">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>pixel group information</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_22">
+        <item>
+         <widget class="QLabel" name="label_group_along_tube">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>group along tube (tof)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="group_along_tof"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_group_cross_tube">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>group cross tube (tof)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="group_cross_tof"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_23">
+        <item>
+         <widget class="QLabel" name="label_group_along_tube_2">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>group along tube (d)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="group_along_d"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_group_cross_tube_2">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>group cross tube (d)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="group_cross_d"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_4 {
+	background-color: rgb(248, 254, 255);
+	border: 2px solid rgb(205, 255, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_smooth_parameter">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>smooth parameter</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="2" column="4">
+         <widget class="QLineEdit" name="smooth_order_groupMA"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_smooth_order">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>smooth order</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="smooth_check">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Smooth</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_smooth_points">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>smooth points</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="5">
+         <widget class="QLineEdit" name="smooth_points_groupSA"/>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="label_smooth_groupSA">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>groupSA</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="label_smooth_groupSE">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>groupSE</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="smooth_order_groupHA"/>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_smooth_groupHA">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>groupHA</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QLineEdit" name="smooth_order_groupSA"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="smooth_order_groupBS"/>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_smooth_groupBS">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>groupBS</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QLineEdit" name="smooth_points_groupMA"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="smooth_points_groupHA"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="smooth_points_groupBS"/>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="smooth_points_groupSE"/>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLineEdit" name="smooth_order_groupSE"/>
+        </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="label_smooth_groupMA">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>groupMA</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_2 {
+	background-color: rgb(248, 254, 255);
+	border: 2px solid rgb(205, 255, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_the_d_peaks_position">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>The d peaks positions</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="peaks_info_line"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_d_peaks_example">
+          <property name="text">
+           <string>Example: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="example_peaks_info">
+          <property name="text">
+           <string>3.13567,1.92020,1.63755,1.35779,1.24599,1.10863,1.04522,0.96010,0.91803,0.85874,0.72577</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_5">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_5 {
+	background-color: rgb(248, 254, 255);
+	border: 2px solid rgb(205, 255, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_peak_find_parameter">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>peak find parameter</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2" columnstretch="5,0,0">
+        <property name="verticalSpacing">
+         <number>2</number>
+        </property>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_peak_find_groupHA">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>groupHA</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="peakfind_groupHA"/>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_peak_find_groupBS">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>groupBS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="peakfind_groupBS">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_Least_peaks_number">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Least Peaks Number</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="least_number_groupSA"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="goodness_groupHA"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="goodness_groupBS"/>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="least_number_groupSE"/>
+        </item>
+        <item row="4" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QLabel" name="label_peak_find_groupMA">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>groupMA</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="peakfind_groupMA"/>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLineEdit" name="goodness_groupMA"/>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="goodness_bottom">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Goodness_Bottom</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="least_number_groupHA"/>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLineEdit" name="goodness_groupSA"/>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLineEdit" name="goodness_groupSE"/>
+        </item>
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_peak_fitting_function">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>peak fitting function</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="gaussian_check">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Gaussian</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="asygaussian_check">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Asymmetric Gaussian</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="least_number_groupMA"/>
+        </item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="label_peak_find_groupSE">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>groupSE</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="peakfind_groupSE"/>
+          </item>
+         </layout>
+        </item>
+        <item row="5" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <widget class="QLabel" name="label_peak_find_groupSA">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>groupSA</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="peakfind_groupSA"/>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="least_number_groupBS"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_6">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_6 {
+	background-color: rgb(210, 236, 255);
+}
+
+QPushButton#check_button {
+    background-color: none; /* 不设置背景色，使用默认样式 */
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_18">
+      <item>
+       <widget class="QPushButton" name="paracheck_button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>Check Parameter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_paracheck_module1">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>module 1</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="paracheck_module_num_1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>01</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>02</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>03</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>04</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>05</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>06</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>07</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>08</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>09</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="paracheck_module_num_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>01</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>02</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>03</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>04</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>05</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>06</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>07</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>08</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>09</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_16">
+        <item>
+         <widget class="QLabel" name="label_paracheck_ixel">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>pixel</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="paracheck_pixel_num_1">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>17</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>18</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>19</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>21</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>22</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>23</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="paracheck_pixel_num_2">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="paracheck_pixel_num_3">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_17">
+        <item>
+         <widget class="QLabel" name="offset_fit_order">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>offset fit order</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="paracheck_order">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>linear</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>quadratic</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_3 {
+	background-color: rgb(248, 254, 255);
+	border: 2px solid rgb(205, 255, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="group_and_fitting_function_selection">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="text">
+         <string>Bank and fitting function selection</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QCheckBox" name="groupBS_check">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>groupBS</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="groupBS_order">
+          <item>
+           <property name="text">
+            <string>linear</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>quadratic</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="groupHA_check">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>groupHA</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="groupHA_order">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>linear</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>quadratic</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="groupSE_check">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>groupSE</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="groupSE_order">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>linear</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>quadratic</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QCheckBox" name="groupMA_check">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>groupMA</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="groupMA_order">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>linear</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>quadratic</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="groupSA_check">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>groupSA</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="groupSA_order">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>linear</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>quadratic</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2,2,2,1">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="run_button">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Run</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="load_config">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Load Configure</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="save_config">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Save Configure</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_7">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_7 {
+	background-color: rgb(210, 250, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="title">
+         <string>strategy</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="QRadioButton" name="group_check">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Check Group Level</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="group_select">
+             <item>
+              <property name="text">
+               <string>groupBS</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>groupHA</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>groupSE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>groupMA</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>groupSA</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_20">
+           <item>
+            <widget class="QRadioButton" name="bank_check">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Check Bank Level</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="bank_select">
+             <item>
+              <property name="text">
+               <string>bank01</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank02</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank03</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank04</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank05</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank06</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank07</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank08</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank09</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank10</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank11</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank12</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank13</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>bank14</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_21">
+           <item>
+            <widget class="QRadioButton" name="module_check">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Check Module Level</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_strategy_module1">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>module 1</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_module_num_1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>01</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>02</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>03</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>04</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>05</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>06</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>07</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>08</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>09</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>10</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>11</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>12</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>13</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>14</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_module_num_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>01</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>02</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>03</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>04</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>05</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>06</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>07</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>08</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>09</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>10</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>11</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>12</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>13</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>14</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_strategy_pixel">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>pixel</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_pixel_num_1">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>9</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>10</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>11</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>12</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>13</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>14</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>15</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>16</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>17</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>18</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>19</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>20</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>21</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>22</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>23</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>24</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_pixel_num_2">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>9</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_pixel_num_3">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>9</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_strategy_to">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>——</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_pixel_num_4">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>9</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>10</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>11</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>12</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>13</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>14</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>15</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>16</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>17</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>18</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>19</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>20</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>21</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>22</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>23</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>24</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_pixel_num_5">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>9</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resultcheck_pixel_num_6">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>9</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="resultcheck_button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Check Result</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
