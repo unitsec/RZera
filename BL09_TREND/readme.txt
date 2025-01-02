@@ -8,3 +8,17 @@
 
 可以在offset界面导入sample_data中的json文件，免去输入大量参数的烦恼
 ——————————————————————————————————————————————————————————————————————————————————————————
+2024.12.30
+use code model:
+    To use this software, you need to configure the virtual environment first. conda is recommended. The steps are as follows:
+    1. Create a virtual environment with python version 3.10 or higher (3.10 is recommended because it is the version used at development time)
+    2. Run pip install to install the provided whl file rongzai-1.0-py3-none-any.whl to install core rongzai and related dependencies
+    3. You may need to install pyqt5 and redis according to the program error to install.
+
+    To use: Run mainwindow.py in python
+
+    The json file in sample_data can be imported from the offset screen, eliminating the need to enter a large number of parameters
+
+Or
+use software package on windows:
+    you can unzip BL09_TRENND.zip, and use the mainwindow.exe in it.
