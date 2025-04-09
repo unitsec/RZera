@@ -1,5 +1,5 @@
 2024.09.19——————————————————————————————————————————————————————————————————————————
-使用方法：双击start.bat即可
+使用方法：解压Rzera_env到当前文件夹后，双击start.bat即可。
 
 一个成功的案例，操作如下：
 1、双击start.bat；
@@ -15,7 +15,7 @@
 
 ——————————————————————————————————————————————————————————————————————————————————————————
 
-To use: Run start.bat in python
+To use: Unzip Rzera_env to the current folder. Run start.bat by double clicked.
 
 Here is a successful case with the following operations:
 
