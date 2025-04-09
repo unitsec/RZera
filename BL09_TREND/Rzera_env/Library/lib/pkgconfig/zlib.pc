@@ -1,0 +1,13 @@
+prefix=C:/b/abs_72khlqt_kh/croot/zlib_1714514696139/_h_env/Library
+exec_prefix=C:/b/abs_72khlqt_kh/croot/zlib_1714514696139/_h_env/Library
+libdir=C:/b/abs_72khlqt_kh/croot/zlib_1714514696139/_h_env/Library/lib
+sharedlibdir=C:/b/abs_72khlqt_kh/croot/zlib_1714514696139/_h_env/Library/lib
+includedir=C:/b/abs_72khlqt_kh/croot/zlib_1714514696139/_h_env/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

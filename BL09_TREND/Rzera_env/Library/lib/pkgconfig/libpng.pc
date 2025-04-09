@@ -1,0 +1,12 @@
+prefix=C:/b/abs_8d5_fdq9d2/croot/libpng_1677841684206/_h_env/Library
+exec_prefix=C:/b/abs_8d5_fdq9d2/croot/libpng_1677841684206/_h_env/Library
+libdir=C:/b/abs_8d5_fdq9d2/croot/libpng_1677841684206/_h_env/Library/lib
+includedir=C:/b/abs_8d5_fdq9d2/croot/libpng_1677841684206/_h_env/Library/include/libpng16
+
+Name: libpng
+Description: Loads and saves PNG files
+Version: 1.6.39
+Requires.private: zlib
+Libs: -L${libdir} -lpng16
+Libs.private: -lz
+Cflags: -I${includedir}
