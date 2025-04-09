@@ -7,27 +7,24 @@ from PyQt5.QtCore import Qt, pyqtSignal
 # self defined controlbox: multi-check combobox
 class XComboBox(QComboBox):
     itemChecked = pyqtSignal(list)
-    _checks = []
 
     def __init__(self, parent) -> None:
         super().__init__(parent)
+        self._checks = []
         listwgt = QListWidget(self)
         self.setView(listwgt)
         self.setModel(listwgt.model())
-
         lineEdit = QLineEdit(self)
         lineEdit.setReadOnly(True)
         self.setLineEdit(lineEdit)
 
-        self.add_item('All')
+        # self.add_item('All')
 
     def add_item(self, text: str):
         check = QCheckBox(text, self.view())
         check.stateChanged.connect(self.on_state_changed)
         self._checks.append(check)
-
         item = QListWidgetItem(self.view())
-
         self.view().addItem(item)
         self.view().setItemWidget(item, check)
 
@@ -37,12 +34,11 @@ class XComboBox(QComboBox):
 
     def clear(self):
         self.view().clear()
+        self._checks = []
 
     def get_selected(self):
         sel_data = []
         for chk in self._checks:
-            if self._checks[0] == chk:
-                continue
             if chk.checkState() == Qt.Checked:
                 sel_data.append(chk.text())
         return sel_data
@@ -53,10 +49,7 @@ class XComboBox(QComboBox):
             chk.setCheckState(Qt.CheckState(state))
             chk.blockSignals(False)
 
-    def on_state_changed(self, state):
-        if self.sender() == self._checks[0]:
-            self.set_all_state(state)
-
+    def on_state_changed(self):
         sel_data = self.get_selected()
         self.itemChecked.emit(sel_data)
         self.lineEdit().setText(';'.join(sel_data))

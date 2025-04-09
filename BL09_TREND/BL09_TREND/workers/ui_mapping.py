@@ -54,14 +54,29 @@ def sort_mapping(window,config):
             config[name] = obj.text()
     return config
 
-
-
 def offset_mapping(run_filePaths,offset_config,mode='cal',bank_group=None):
     offset_config['save_path'] = offset_config['select_path_text']
     offset_config['param_path'] = offset_config['select_pid_text']
-    offset_config['data_path'] = os.path.dirname(os.path.dirname(run_filePaths[0]))
+
+    # if len(run_filePaths[0]) > 1:
+    ## 要考虑数据结构待修改
+    offset_config['data_path'] = os.path.dirname(os.path.dirname(run_filePaths[0][0]))
+    offset_config['sam_run'] = [os.path.basename(os.path.dirname(run_filePaths[0][0]))]
+    # # else:
+    #     offset_config['data_path'] = os.path.dirname(os.path.dirname(run_filePaths[0]))
+    #     offset_config['sam_run'] = [os.path.basename(os.path.dirname(run_filePaths[0]))]
+    print(run_filePaths)
+    if offset_config['LA_offset']:
+        offset_config['sam_fns'] = run_filePaths
+    else:
+        flattened_data = []
+        for sublist in run_filePaths:
+            if sublist:
+                flattened_data.extend(sublist)
+        run_filePaths = flattened_data
+    print(run_filePaths)
+
     offset_config['sam_fn'] = run_filePaths
-    offset_config['sam_run'] = [os.path.basename(os.path.dirname(run_filePaths[0]))]
     selected_group = []
     if mode == 'check':
         selected_module = []
@@ -80,8 +95,8 @@ def offset_mapping(run_filePaths,offset_config,mode='cal',bank_group=None):
             selected_group.append(f'groupSE')
         if offset_config[f'groupMA_check'] is True:
             selected_group.append(f'groupMA')
-        if offset_config[f'groupSA_check'] is True:
-            selected_group.append(f'groupSA')
+        if offset_config[f'groupLA_check'] is True:
+            selected_group.append(f'groupLA')
     offset_config['selected_group'] = selected_group
     offset_config['smooth_para'] = {}
     offset_config['d_std'] = {}
@@ -93,18 +108,47 @@ def offset_mapping(run_filePaths,offset_config,mode='cal',bank_group=None):
         offset_config['smooth_para'][group]={}
         offset_config['smooth_para'][group]['is_smooth'] = offset_config['smooth_check']
         offset_config['smooth_para'][group]['smooth_para'] = [int(offset_config[f'smooth_points_{group}']),int(offset_config[f'smooth_order_{group}'])]
-        offset_config['d_std'][group] = [float(x) for x in offset_config['peaks_info_line'].split(',')]
+        if offset_config['LA_offset']:
+            offset_config['d_std'][group] = {}
+            offset_config['d_std'][group]['HA'] = [float(x) for x in offset_config['peaks_info_line'].split(',')]
+            offset_config['d_std'][group]['LA'] = [float(x) for x in offset_config['peaks_info_line_LA'].split(',')]
+        else:
+            offset_config['d_std'][group] = [float(x) for x in offset_config['peaks_info_line'].split(',')]
 
-        # 使用正则表达式匹配每个子列表
-        pattern = re.compile(r'\[(.*?)\]')
-        matches = pattern.findall(offset_config[f'peakfind_{group}'])
-        # 将匹配结果转换为浮点数列表
-        offset_config['high_width_para'][group] = []
-        for match in matches:
-            # 将每个子列表的字符串内容转换为浮点数
-            sublist = [float(x) for x in match.split(',')]
-            offset_config['high_width_para'][group].append(sublist)
-        offset_config['high_width_para'][group] = offset_config['high_width_para'][group][:len(offset_config['d_std'][group])]
+        if offset_config['LA_offset']:
+            # 使用正则表达式匹配每个子列表
+            pattern = re.compile(r'\[(.*?)\]')
+            matches = pattern.findall(offset_config[f'peakfind_{group}'])
+            # 将匹配结果转换为浮点数列表
+            offset_config['high_width_para'][group] = {}
+            offset_config['high_width_para'][group]['HA'] = []
+            for match in matches:
+                # 将每个子列表的字符串内容转换为浮点数
+                sublist = [float(x) for x in match.split(',')]
+                offset_config['high_width_para'][group]['HA'].append(sublist)
+            offset_config['high_width_para'][group]['HA'] = offset_config['high_width_para'][group]['HA'][:len(offset_config['d_std'][group]["HA"])]
+            # 使用正则表达式匹配每个子列表
+            pattern = re.compile(r'\[(.*?)\]')
+            matches = pattern.findall(offset_config[f'peakfind_{group}_LA'])
+            # 将匹配结果转换为浮点数列表
+            offset_config['high_width_para'][group]['LA'] = []
+            for match in matches:
+                # 将每个子列表的字符串内容转换为浮点数
+                sublist = [float(x) for x in match.split(',')]
+                offset_config['high_width_para'][group]['LA'].append(sublist)
+            offset_config['high_width_para'][group]["LA"] = offset_config['high_width_para'][group]['LA'][:len(offset_config['d_std'][group]["LA"])]
+        else:
+            # 使用正则表达式匹配每个子列表
+            pattern = re.compile(r'\[(.*?)\]')
+            matches = pattern.findall(offset_config[f'peakfind_{group}'])
+            # 将匹配结果转换为浮点数列表
+            offset_config['high_width_para'][group] = []
+            for match in matches:
+                # 将每个子列表的字符串内容转换为浮点数
+                sublist = [float(x) for x in match.split(',')]
+                offset_config['high_width_para'][group].append(sublist)
+            offset_config['high_width_para'][group] = offset_config['high_width_para'][group][
+                                                      :len(offset_config['d_std'][group])]
 
         offset_config['fit_para'][group] = {}
         offset_config['fit_para'][group]['least_peaks_num'] = float(offset_config[f'least_number_{group}'])
@@ -114,7 +158,7 @@ def offset_mapping(run_filePaths,offset_config,mode='cal',bank_group=None):
             offset_config['fit_para'][group]['fit_function'] = 'gaussian'
         offset_config['fit_para'][group]['order'] = offset_config[f'{group}_order']
         offset_config['fit_para'][group]['goodness_bottom'] = float(offset_config[f'goodness_{group}'])
-        offset_config['fit_para'][group]['sub_background'] = True
+        offset_config['fit_para'][group]['sub_background'] = False
 
         offset_config['group_para_tof'][group] = {}
         offset_config['group_para_tof'][group]['group_along_tube'] = int(offset_config['group_along_tof'])
@@ -131,7 +175,7 @@ def offset_mapping(run_filePaths,offset_config,mode='cal',bank_group=None):
         offset_config['mode'] = 'cal'
         offset_config['check_point'] = 1
     offset_config['anchor_point'] = None
-    offset_config['group_list'] = ['groupBS','groupHA','groupSE','groupMA','groupSA']
+    offset_config['group_list'] = ['groupBS','groupHA','groupSE','groupMA','groupBM','groupLA']
     offset_config['rebin_mode'] = 'uniform'
     return offset_config
 
@@ -139,10 +183,18 @@ def offset_mapping(run_filePaths,offset_config,mode='cal',bank_group=None):
 def resultcheck_mapping(run_filePaths,offset_config):
     offset_config['save_path'] = offset_config['select_path_text']
     offset_config['param_path'] = offset_config['select_pid_text']
-    offset_config['data_path'] = os.path.dirname(os.path.dirname(run_filePaths[0]))
+    offset_config['data_path'] = os.path.dirname(os.path.dirname(run_filePaths[0][0]))
     offset_config['sam_fn'] = run_filePaths
-    offset_config['sam_run'] = [os.path.basename(os.path.dirname(run_filePaths[0]))]
-    offset_config['d_std'] = [float(x) for x in offset_config['peaks_info_line'].split(',')]
+    offset_config['sam_run'] = [os.path.basename(os.path.dirname(run_filePaths[0][0]))]
+    if offset_config['LA_offset']:
+        peaks_info_line = offset_config.get('peaks_info_line', '')
+        peaks_info_line_LA = offset_config.get('peaks_info_line_LA', '')
+        peaks_info_line_floats = [float(x) for x in peaks_info_line.split(',') if x.strip()]
+        peaks_info_line_LA_floats = [float(x) for x in peaks_info_line_LA.split(',') if x.strip()]
+        combined_floats = peaks_info_line_floats + peaks_info_line_LA_floats
+        offset_config['d_std'] = combined_floats
+    else:
+        offset_config['d_std'] = [float(x) for x in offset_config['peaks_info_line'].split(',')]
     if offset_config['group_check'] is True:
         offset_config['selected_detector'] = offset_config['group_select']
     elif offset_config['bank_check'] is True:
@@ -153,7 +205,7 @@ def resultcheck_mapping(run_filePaths,offset_config):
         start_pixel = f"{offset_config['resultcheck_pixel_num_1']}{offset_config['resultcheck_pixel_num_2']}{offset_config['resultcheck_pixel_num_3']}"
         end_pixel = f"{offset_config['resultcheck_pixel_num_4']}{offset_config['resultcheck_pixel_num_5']}{offset_config['resultcheck_pixel_num_6']}"
         offset_config['selected_pixels'] = [int(start_pixel)-1,int(end_pixel)]
-    offset_config['group_list'] = ['group2','group3','group4','group5','group6','group7']
+    offset_config['group_list'] = ['groupBS','groupHA','groupSE','groupMA','groupBM','groupLA']
     offset_config['rebin_mode'] = 'uniform'
     return offset_config
 
@@ -195,7 +247,11 @@ def load_offset_config(window):
             load_mapping(window, offset_configure)
             # index = mode.findText(diff_configure['mode'])
             # mode.setCurrentIndex(index)
-            window.run_filePaths = offset_configure['sam_fn']
+            if len(offset_configure['sam_fn']) == 2:
+                window.run_filePaths = offset_configure['sam_fn'][0]
+                window.run_filePaths_2 = offset_configure['sam_fn'][1]
+            else:
+                window.run_filePaths = offset_configure['sam_fn']
 
     except Exception as e:
         QtWidgets.QMessageBox.information(window, 'Error',
@@ -435,7 +491,6 @@ def save_diff_config(window, diff_config, BL09_config):
     try:
         diff_config, _ = diff_mapping(window, diff_config, BL09_config)
 
-
         # if diff_config['mode'] == 'offline':
             # 弹出保存文件对话框
         options = QFileDialog.Options()
@@ -477,8 +532,7 @@ def save_pdf_config(window, pdf_config):
     # if pdf_config['mode'] == 'offline':
         # 弹出保存文件对话框
     options = QFileDialog.Options()
-    filename, _ = QFileDialog.getSaveFileName(window, "Save Config", "", "JSON Files (*.json);;All Files (*)",
-                                              options=options)
+    filename, _ = QFileDialog.getSaveFileName(window, "Save Config", "", "JSON Files (*.json);;All Files (*)", options=options)
 
     if filename:
         # 确保文件名以 .json 结尾

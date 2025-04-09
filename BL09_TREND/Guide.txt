@@ -1,0 +1,31 @@
+2024.09.19——————————————————————————————————————————————————————————————————————————
+使用方法：双击start.bat即可
+
+一个成功的案例，操作如下：
+1、双击start.bat；
+2、单击Open；
+3、选择菜单中others中的offset correction；
+4、单击Load Configure，选择example中的offset_run78.json；
+5、单击RUN；
+6、待计算完成，退出offset creation界面；
+7、单击Load Configure，选择example中的reduction_run78.json；
+8、单击Instru Folder，选择example中的instrumentFiles文件夹；
+9、单击Offset Folder，选择example中的offsetFiles_RUN0000078_15_4_d文件夹；
+10、单击Reduction，即可完成time-focus校正下的规约结果。
+
+——————————————————————————————————————————————————————————————————————————————————————————
+
+To use: Run start.bat in python
+
+Here is a successful case with the following operations:
+
+1. Double-click `start.bat`.
+2. Click `Open`.
+3. Select `others` from the menu, and select offset correction.
+4. Click `Load Configure` and select `offset_run78.json` from the `example` folder.
+5. Click `RUN`.
+6. Wait for the calculation to complete, then exit the offset creation interface.
+7. Click `Load Configure` and select `reduction_run78.json` from the `example` folder.
+8. Click `Instru Folder` and select the `instrumentFiles` folder from the `example` folder.
+9. Click `Offset Folder` and select the `offsetFiles_RUN0000078_15_4_d` folder from the `example` folder.
+10. Click `Reduction` to complete the reduction result under time-focus correction.

@@ -1,11 +1,13 @@
 {
   "save_path": "../output/BL09/offsetFiles",
   "param_path": "../param_data/BL09/instrumentFiles",
-  "data_path": "D:/download",
+  "data_path": "D:\\Documents\\CSNS_data\\BL09\\nxsdata",
   "sam_run": [
     "RUN0000078"
   ],
   "first_flight_distance": 78,
+  "T0_offset": -3.7,
+  "is_c0_0": true,
   "smooth_para": {
     "groupBS": {
       "is_smooth": true,
@@ -23,17 +25,17 @@
       "is_smooth": true,
       "smooth_para": [50, 4]
     },
-    "groupSA": {
+    "groupLA": {
       "is_smooth": true,
       "smooth_para": [50, 4]
     }
   },
   "d_std": {
-    "groupBS": [3.135672534, 1.920199402, 1.637551558, 1.357786, 1.245989913, 1.108627651, 1.045224178, 0.960099701, 0.918030908, 0.858739214],
+    "groupBS": [3.135672534],
     "groupHA": [3.135672534, 1.920199402, 1.637551558, 1.357786, 1.245989913, 1.108627651, 1.045224178, 0.960099701, 0.918030908, 0.858739214],
     "groupSE": [3.135672534, 1.920199402, 1.637551558, 1.357786, 1.245989913, 1.108627651, 1.045224178, 0.960099701, 0.918030908, 0.858739214],
     "groupMA": [3.135672534, 1.920199402, 1.637551558, 1.357786, 1.245989913, 1.108627651, 1.045224178, 0.960099701, 0.918030908, 0.858739214],
-    "groupSA": [3.135672534, 1.920199402, 1.637551558, 1.357786, 1.245989913, 1.108627651, 1.045224178, 0.960099701, 0.918030908, 0.858739214]
+    "groupLA": [3.135672534, 1.920199402, 1.637551558, 1.357786, 1.245989913, 1.108627651, 1.045224178, 0.960099701, 0.918030908, 0.858739214]
   },
   "high_width_para": {
     "groupBS": [
@@ -84,7 +86,7 @@
       [0.15, 0.003, 0.005],
       [0.15, 0.003, 0.005]
     ],
-    "groupSA": [
+    "groupLA": [
       [0.1, 0.006, 0.008],
       [0.5, 0.004, 0.005],
       [0.4, 0.003, 0.005],
@@ -99,7 +101,7 @@
   },
   "fit_para": {
     "groupBS": {
-      "least_peaks_num": 3,
+      "least_peaks_num": 1,
       "fit_function": "gaussian",
       "order": "linear",
       "goodness_bottom": 0.95,
@@ -126,7 +128,7 @@
       "goodness_bottom": 0.95,
       "sub_background": true
     },
-    "groupSA": {
+    "groupLA": {
       "least_peaks_num": 3,
       "fit_function": "gaussian",
       "order": "linear",
@@ -151,7 +153,7 @@
       "group_along_tube": 3,
       "group_cross_tube": 1
     },
-    "groupSA": {
+    "groupLA": {
       "group_along_tube": 3,
       "group_cross_tube": 1
     }
@@ -173,12 +175,12 @@
       "group_along_tube": 2,
       "group_cross_tube": 1
     },
-    "groupSA": {
+    "groupLA": {
       "group_along_tube": 2,
       "group_cross_tube": 1
     }
   },
-  "mode": "check",
+  "mode": "cal",
   "check_point": 100,
   "anchor_point": null,
   "group_list": [

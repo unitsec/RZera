@@ -9,6 +9,8 @@ class checkbox_operation:
                 pushbutton.setEnabled(checkbox.isChecked())
             if lineedit is not None:
                 lineedit.setEnabled(checkbox.isChecked())
+                if not checkbox.isChecked():  # 如果复选框没有被选中
+                    lineedit.clear()  # 将lineedit设为空
             if combobox is not None:
                 combobox.setEnabled(checkbox.isChecked())
                 combobox.setCurrentIndex(0)

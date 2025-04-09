@@ -289,16 +289,18 @@ class redisThread(QThread):
         runno = "RUN" + str(runno).zfill(7)
         project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # 获取项目的根目录, __file__ 是当前脚本的路径
         history_folder = os.path.join(project_root, BL_name, "online", 'history') # 组织 history 文件夹的路径
-        filePath = os.path.join(history_folder, runno)  # 根据 runno 组织文件路径
-        self.check_dir(filePath)  # 检查文件路径是否存在
-        self.writeWechatInfo(filePath)
+        file_Path = os.path.join(history_folder, runno)  # 根据 runno 组织文件路径
+        self.check_dir(file_Path)  # 检查文件路径是否存在
+        self.writeWechatInfo(file_Path)
         for detector in detectorList:
-            self.writeWechatData(filePath, detector, wechat_map)
-        filename = filePath + "/" + wechat_map[tab_name] + ".jpg"
-        self.save_current_window_snapshot(filename)
+            self.writeWechatData(file_Path, detector, wechat_map)
+        if tab_name != 'Reduction':
+            filename = file_Path + "/" + wechat_map[tab_name] + ".jpg"
+            self.save_current_window_snapshot(filename)
         time.sleep(1)
-        _cmd = 'scp -r ' + filePath + ' tangm@202.38.129.18:/home/tangm/instrument/' + BL_name[:4]
+        _cmd = 'scp -r ' + file_Path + ' tangm@202.38.129.18:/home/tangm/instrument/' + BL_name[:4]
         subprocess.Popen(_cmd, shell=True)
+
 
     # 查看路径是否存在，不存在就创建
     def check_dir(self, path):
@@ -332,9 +334,10 @@ class redisThread(QThread):
                 x = x[::num]
                 y = y[::num]
             #保留两位小数
-            x = np.round(x, 2).tolist()
-            y = np.round(y, 2).tolist()
-
+            x = np.round(x, 2)
+            y = np.round(y, 2)
+            x, y = self.crop_zero_data(x, y)
+            x, y = x.tolist(), y.tolist()
             data = []
             for i in range(len(x)):
                 data.append([x[i], y[i]])
@@ -360,6 +363,7 @@ class redisThread(QThread):
     #     pixmap.save(filename, quality=100)
 
     def save_current_window_snapshot(self, filename):
+        QApplication.processEvents()
         pixmap = self.parent.grab() # 获取当前窗口的QPixmap
         # 保存图片
         if pixmap.save(filename, quality=100):
@@ -367,6 +371,23 @@ class redisThread(QThread):
             # print(f"窗口快照已保存至 {filename}")
         else:
             print("保存图片时出错。")
+
+    # def save_current_window_snapshot(self, filename):
+    #     start_time = time.time()
+    #     print(f"Snapshot started at {start_time}")
+    #
+    #     pixmap = self.parent.grab()  # 获取当前窗口的QPixmap
+    #     snapshot_time = time.time()
+    #     print(f"Pixmap grabbed at {snapshot_time}, elapsed: {snapshot_time - start_time}s")
+    #
+    #     # 保存图片
+    #     if pixmap.save(filename, quality=100):
+    #         print(f"Snapshot saved at {time.time()}, elapsed: {time.time() - snapshot_time}s")
+    #     else:
+    #         print("保存图片时出错。")
+    #
+    #     end_time = time.time()
+    #     print(f"Snapshot process finished at {end_time}, total elapsed: {end_time - start_time}s")
 
     def set_user(self,infoList):
         data = {}
@@ -383,6 +404,8 @@ class redisThread(QThread):
             # merged_bank ={'bank1to6': [], 'bank7_14': [], 'bank8_13': [], 'bank9_12': [], 'bank10_11': []}
             for bank in bankList:
                 x,y = self.get_bank_1d(bank)
+                # print(f'{bank} data:',np.shape(x),np.shape(y))
+                x,y = self.crop_zero_data(x,y)
                 self.bank_1d.emit(x, y, bank)
                     # self.parent.set_bank_1d(x, y, bank)
         except Exception as e:
@@ -404,6 +427,7 @@ class redisThread(QThread):
     def set_module_1d(self):
         try:
             x,y = self.get_module_1d()
+            x, y = self.crop_zero_data(x, y)
             # if x.size>0 and x.size==y.size:
             self.module_1d.emit(x,y)
             # self.parent.set_module_1d(x,y)
@@ -414,6 +438,7 @@ class redisThread(QThread):
     def set_monitor_1d(self):
         try:
             x,y = self.get_monitor_1d()
+            x, y = self.crop_zero_data(x, y)
             # if x.size>0 and x.size==y.size:
             self.monitor_1d.emit(x, y)
             # self.parent.set_monitor_1d(x,y)
@@ -451,7 +476,8 @@ class redisThread(QThread):
         try:
             # merged_bank ={'bank1to6': [], 'bank7_14': [], 'bank8_13': [], 'bank9_12': [], 'bank10_11': []}
             for group in groupList:
-                x,y = self.get_history_1d(beamline, group, history_runno)
+                x, y = self.get_history_1d(beamline, group, history_runno)
+                x, y = self.crop_zero_data(x, y)
                 self.history_1d.emit(x, y, group)
                     # self.parent.set_bank_1d(x, y, bank)
             runno_list = self.get_runno("**/rongzai/group*/*/d")
@@ -497,3 +523,23 @@ class redisThread(QThread):
             y = np.array([])
             return x, y
 #############################################################################################################
+
+    def crop_zero_data(self, x, y):
+        # 检查输入是否为空
+        if len(x) == 0 or len(y) == 0:
+            return np.array([]), np.array([])
+
+        non_zero_indices = np.where(y != 0)[0]
+
+        if non_zero_indices.size > 0:
+            start_index = non_zero_indices[0]
+            end_index = non_zero_indices[-1]
+
+            # 利用这些索引切片 x 和 y
+            x_filtered = x[start_index:end_index + 1]
+            y_filtered = y[start_index:end_index + 1]
+        else:
+            x_filtered = x  # 如果没有非零元素，不进行任何操作
+            y_filtered = y
+
+        return x_filtered, y_filtered

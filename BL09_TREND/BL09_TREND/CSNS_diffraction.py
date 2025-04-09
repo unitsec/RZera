@@ -62,7 +62,7 @@ class CSNS_Diffraction(Diffraction):
             neutron_data = load_neutron_data(nxsfn_list,txt_fn,module,
                                         self.conf['first_flight_distance'],self.conf["T0_offset"])
             if name=="v" and self.conf["vanadium_correction"]["do_correction"]:
-                neutron_data = self.calculate_pattern(neutron_data,self.conf["vanadium_correction"])
+                neutron_data = self.calculate_pattern(neutron_data, self.conf["vanadium_correction"])
             else:
                 neutron_data = self.calculate_pattern(neutron_data)
             x,y,e = neutron_data["xvalue"].values[0],neutron_data["histogram"].values[0],neutron_data["error"].values[0]

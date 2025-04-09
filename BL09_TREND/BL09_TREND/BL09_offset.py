@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QDialog,QFileDialog,QTextEdit
 from PyQt5.QtCore import Qt
 from BL09_TREND.ui.ui_BL09_offset import Ui_Form   # 导入弹出窗口的 UI 类
+from BL09_TREND.workers.checkbox_operation import checkbox_operation
 from BL09_TREND.workers.browse_file import browse_file
 from BL09_TREND.workers.ui_mapping import save_offset_config,load_offset_config
 import BL09_TREND.workers.offset_thread
@@ -23,19 +24,32 @@ class BL09_offset(QDialog, Ui_Form):
         self.group_cross_d.setValidator(self.nozerointvalidator)
 
         self.run_filePaths = []
+        self.run_filePaths_2 = []
         self.browser = browse_file()
-        self.select_run.clicked.connect(lambda:self.browser.select_nxsfile(self.run_filePaths, self.select_run_text))
+        # self.select_run.clicked.connect(lambda:self.browser.select_nxsfile(self.run_filePaths, self.select_run_text))
+
+        # 添加低角校正
+        self.peaks_info_line_LA.setEnabled(False)
+        self.select_run_2.setEnabled(False)
+        self.select_run_text_2.setEnabled(False)
+        # self.check_second.setEnabled(False)
+        self.checkbox_operation = checkbox_operation()
+        self.LA_offset.stateChanged.connect(lambda: (self.checkbox_operation.check_set(self.LA_offset, pushbutton=self.select_run_2, lineedit=self.select_run_text_2), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peaks_info_line_LA), setattr(self, 'run_filePaths_2', []), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peakfind_groupBS_LA), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peakfind_groupBS_LA), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peakfind_groupBM_LA), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peakfind_groupHA_LA), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peakfind_groupSE_LA), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peakfind_groupMA_LA), self.checkbox_operation.check_set(self.LA_offset,lineedit=self.peakfind_groupLA_LA), self.checkbox_operation.check_set(self.LA_offset,radiobutton=self.check_second)))
+        # ##
+
+        self.select_run.clicked.connect(lambda: self.browser.select_nxsfiles(self.select_run_text, self.run_filePaths))
+        self.select_run_2.clicked.connect(lambda: self.browser.select_nxsfiles(self.select_run_text_2, self.run_filePaths_2))
         self.select_pid.clicked.connect(lambda: self.browser.select_folder(self.select_pid_text))
         self.select_path.clicked.connect(lambda: self.browser.select_folder(self.select_path_text))
         self.offset_thread = BL09_TREND.workers.offset_thread.start_offset_thread()
-        self.run_button.clicked.connect(lambda: self.offset_thread.start_offset(self, self.run_filePaths, self.run_button))
+        self.run_button.clicked.connect(lambda: self.offset_thread.start_offset(self, [self.run_filePaths]+[self.run_filePaths_2], self.run_button))
         self.paracheck_thread = BL09_TREND.workers.offset_thread.start_paracheck_process(self, self.paracheck_button)
-        self.paracheck_button.clicked.connect(lambda: self.paracheck_thread.start_check(self.run_filePaths,))
+        self.paracheck_button.clicked.connect(lambda: self.paracheck_thread.start_check([self.run_filePaths]+[self.run_filePaths_2]),)
         self.resultcheck_thread = BL09_TREND.workers.offset_thread.start_resultcheck_process(self, self.resultcheck_button)
-        self.resultcheck_button.clicked.connect(lambda: self.resultcheck_thread.start_check(self.run_filePaths))
+        self.resultcheck_button.clicked.connect(lambda: self.resultcheck_thread.start_check([self.run_filePaths]+[self.run_filePaths_2]))
 
         ######################################### 配置 save_config  #######################################################
-        self.save_config.clicked.connect(lambda: save_offset_config(self,self.run_filePaths))
+        self.save_config.clicked.connect(lambda: save_offset_config(self, [self.run_filePaths]+[self.run_filePaths_2]))
 
         ######################################### 配置 load_config  #######################################################
         self.load_config.clicked.connect(lambda: load_offset_config(self))  # 从配置文件读取配置

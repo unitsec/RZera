@@ -1,3 +1,4 @@
+import sys
 import traceback
 import numpy as np
 from rongzai.dataSvc.data_load import load_neutron_data
@@ -12,7 +13,11 @@ from rongzai.utils.array_utils import generate_x
 import matplotlib.pyplot as plt
 from rongzai.utils.config_utils import generate_offset_conf
 from rongzai.utils.defined_functions import linear_func,quadratic_func
-
+from rongzai.algSvc.base import (auto_extract_peak_data,smooth,fit_gaussian,
+                         rebin,baseline_alg,goodness_of_fit,get_l_theta)
+from rongzai.utils.constants import *
+from rongzai.dataSvc.data_creator import *
+import math
 class CSNS_Offset(PixelOffsetCalNeutronData):
     def __init__(self,base_json,offset_json,detector,ui=False):
         if ui is True:
@@ -20,9 +25,11 @@ class CSNS_Offset(PixelOffsetCalNeutronData):
         else:
             self.conf = generate_offset_conf(base_json,offset_json)
         self.is_ui = ui
-        self.groupInfo, self.bankInfo, self.pixelInfo = generateBank(self.conf["beamline"])
-        self.groupname, self.moduleList = get_all_from_detector(detector, self.groupInfo,
-                                                                self.bankInfo)
+        #self.groupInfo, self.bankInfo, self.pixelInfo = generateBank(self.conf["beamline"])
+        self.groupname,self.moduleList = get_all_from_detector(detector,self.conf["group_info"],self.conf["bank_info"])
+        self.pixelInfo = self.conf["pixel_info"]
+        #self.groupname, self.moduleList = get_all_from_detector(detector, self.groupInfo,
+        #                                                        self.bankInfo)
         self.detector = detector
 
         params = self.conf["d_rebin"][self.groupname]
@@ -37,7 +44,7 @@ class CSNS_Offset(PixelOffsetCalNeutronData):
         d_std = self.conf["d_std"][self.groupname]
         high_width_para = self.conf["high_width_para"][self.groupname]
         for module in self.moduleList:
-            print("start: ", module)
+            # print("start: ", module,self.conf["sam_fn"])
             dataset = load_neutron_data(self.conf["sam_fn"], f'{self.conf["param_path"]}/{module}.txt',
                                         module, self.conf["first_flight_distance"])
 
@@ -50,36 +57,110 @@ class CSNS_Offset(PixelOffsetCalNeutronData):
                                         goodness_bottom=fit_para["goodness_bottom"],
                                         is_smooth=smooth_para["is_smooth"], smooth_para=smooth_para["smooth_para"],
                                         least_peaks_num=fit_para["least_peaks_num"],
-                                        group_along_tube_d=group_para_d["group_along_tube"],
-                                        group_cross_tube_d=group_para_d["group_cross_tube"],
-                                        group_along_tube_tof=group_para_tof["group_along_tube"],
-                                        group_cross_tube_tof=group_para_tof["group_cross_tube"],
+                                        group_along_tube_d = group_para_d["group_along_tube"],
+                                        group_cross_tube_d = group_para_d["group_cross_tube"],
+                                        group_along_tube_tof = group_para_tof["group_along_tube"],
+                                        group_cross_tube_tof = group_para_tof["group_cross_tube"],
                                         group_mode=self.conf["group_mode"], pixels_per_tube=pixels,
                                         order=fit_para["order"],
                                         check_point=self.conf["check_point"],
                                         anchor_point=self.conf["anchor_point"])
+
     def calculate_offset(self,is_parallel=True,max_workers=8):
+        print(self.conf["fit_para"])
         fit_para = self.conf["fit_para"][self.groupname]
         group_para_tof = self.conf["group_para_tof"][self.groupname]
         group_para_d = self.conf["group_para_d"][self.groupname]
-        #group_para = self.conf["group_para"][self.groupname]
+        # group_para = self.conf["group_para"][self.groupname]
         smooth_para =  self.conf["smooth_para"][self.groupname]
         d_std = self.conf["d_std"][self.groupname]
         high_width_para = self.conf["high_width_para"][self.groupname]
+        is_c0_0 = self.conf["is_c0_0"]
         plot_info_all = []
         for module in self.moduleList:
-            print("start: ", module)
-            dataset = load_neutron_data(self.conf["sam_fn"], f'{self.conf["param_path"]}/{module}.txt',
-                                        module, self.conf["first_flight_distance"])
-
-            if self.pixelInfo[module]["stepbyrow"] == "x":
-                pixels = self.pixelInfo[module]["xpixels"]
+            if self.conf.get('LA_offset', False):
+                self.exp = []
+                self.std = []
+                loop_counts = 0
+                is_parallel = False
+                for fn, tag, tag1 in zip(self.conf['sam_fn'], d_std, high_width_para):
+                    dd_std = d_std[f'{tag}']
+                    hhigh_width_para = high_width_para[f'{tag1}']
+                    print("start: ", module, fn)
+                    dataset = load_neutron_data(fn, f'{self.conf["param_path"]}/{module}.txt',
+                                                module, self.conf["first_flight_distance"],
+                                                x_offset=float(self.conf["T0_offset"]))
+                    if self.pixelInfo[module]["stepbyrow"] == "x":
+                        pixels = self.pixelInfo[module]["xpixels"]
+                    else:
+                        pixels = self.pixelInfo[module]["ypixels"]
+                    if self.conf["mode"] == "check":
+                        plot_info = self.fit_multiple_peaks(dataset, self.conf["save_path"], dd_std, hhigh_width_para,
+                                                            fit_function=fit_para["fit_function"],
+                                                            sub_background=fit_para["sub_background"],
+                                                            is_c0_0=is_c0_0,
+                                                            goodness_bottom=fit_para["goodness_bottom"],
+                                                            is_smooth=smooth_para["is_smooth"],
+                                                            smooth_para=smooth_para["smooth_para"],
+                                                            least_peaks_num=fit_para["least_peaks_num"],
+                                                            group_along_tube_d=group_para_d["group_along_tube"],
+                                                            group_cross_tube_d=group_para_d["group_cross_tube"],
+                                                            group_along_tube_tof=group_para_tof["group_along_tube"],
+                                                            group_cross_tube_tof=group_para_tof["group_cross_tube"],
+                                                            pixels_per_tube=pixels,
+                                                            order=fit_para["order"], mode=self.conf["mode"],
+                                                            check_point=self.conf["check_point"],
+                                                            anchor_point=self.conf["anchor_point"], parallel=False,
+                                                            max_workers=max_workers, ui=self.is_ui, LA_offset=self.conf["LA_offset"], loop_counts= loop_counts)
+                    else:
+                        plot_info = self.fit_multiple_peaks(dataset, self.conf["save_path"], dd_std, hhigh_width_para,
+                                                            fit_function=fit_para["fit_function"],
+                                                            sub_background=fit_para["sub_background"],
+                                                            is_c0_0=is_c0_0,
+                                                            goodness_bottom=fit_para["goodness_bottom"],
+                                                            is_smooth=smooth_para["is_smooth"],
+                                                            smooth_para=smooth_para["smooth_para"],
+                                                            least_peaks_num=fit_para["least_peaks_num"],
+                                                            group_along_tube_d=group_para_d["group_along_tube"],
+                                                            group_cross_tube_d=group_para_d["group_cross_tube"],
+                                                            group_along_tube_tof=group_para_tof["group_along_tube"],
+                                                            group_cross_tube_tof=group_para_tof["group_cross_tube"],
+                                                            pixels_per_tube=pixels,
+                                                            order=fit_para["order"], mode=self.conf["mode"],
+                                                            check_point=self.conf["check_point"],
+                                                            anchor_point=self.conf["anchor_point"],
+                                                            parallel=is_parallel, max_workers=max_workers, LA_offset=self.conf["LA_offset"], loop_counts= loop_counts)
+                    loop_counts+=1
+                plot_info_all.append(plot_info)
+#####################  施工中  #######################################
             else:
-                pixels = self.pixelInfo[module]["ypixels"]
-            if self.conf["mode"] == "check":
-                plot_info = self.fit_multiple_peaks(dataset, self.conf["save_path"], d_std, high_width_para,
-                                        fit_function=fit_para["fit_function"],
-                                        sub_background=fit_para["sub_background"],
+                print("start: ", module, self.conf["sam_fn"])
+                dataset = load_neutron_data(self.conf["sam_fn"], f'{self.conf["param_path"]}/{module}.txt',
+                                            module, self.conf["first_flight_distance"], x_offset=float(self.conf["T0_offset"]))
+                if self.pixelInfo[module]["stepbyrow"] == "x":
+                    pixels = self.pixelInfo[module]["xpixels"]
+                else:
+                    pixels = self.pixelInfo[module]["ypixels"]
+                if self.conf["mode"] == "check":
+                    plot_info = self.fit_multiple_peaks(dataset, self.conf["save_path"], d_std, high_width_para,
+                                            fit_function=fit_para["fit_function"],
+                                            sub_background=fit_para["sub_background"],
+                                            is_c0_0 = is_c0_0,
+                                            goodness_bottom=fit_para["goodness_bottom"],
+                                            is_smooth=smooth_para["is_smooth"], smooth_para=smooth_para["smooth_para"],
+                                            least_peaks_num=fit_para["least_peaks_num"],
+                                            group_along_tube_d=group_para_d["group_along_tube"],
+                                            group_cross_tube_d=group_para_d["group_cross_tube"],
+                                            group_along_tube_tof=group_para_tof["group_along_tube"],
+                                            group_cross_tube_tof=group_para_tof["group_cross_tube"],
+                                            pixels_per_tube=pixels,
+                                            order=fit_para["order"], mode=self.conf["mode"],
+                                            check_point=self.conf["check_point"],
+                                            anchor_point=self.conf["anchor_point"], parallel=False, max_workers=max_workers,ui=self.is_ui)
+                else:
+                    plot_info = self.fit_multiple_peaks(dataset, self.conf["save_path"], d_std, high_width_para,
+                                        fit_function=fit_para["fit_function"],sub_background = fit_para["sub_background"],
+                                        is_c0_0=is_c0_0,
                                         goodness_bottom=fit_para["goodness_bottom"],
                                         is_smooth=smooth_para["is_smooth"], smooth_para=smooth_para["smooth_para"],
                                         least_peaks_num=fit_para["least_peaks_num"],
@@ -88,23 +169,9 @@ class CSNS_Offset(PixelOffsetCalNeutronData):
                                         group_along_tube_tof=group_para_tof["group_along_tube"],
                                         group_cross_tube_tof=group_para_tof["group_cross_tube"],
                                         pixels_per_tube=pixels,
-                                        order=fit_para["order"], mode=self.conf["mode"],
-                                        check_point=self.conf["check_point"],
-                                        anchor_point=self.conf["anchor_point"], parallel=False, max_workers=max_workers,ui=self.is_ui)
-            else:
-                plot_info = self.fit_multiple_peaks(dataset, self.conf["save_path"], d_std, high_width_para,
-                                    fit_function=fit_para["fit_function"],sub_background = fit_para["sub_background"],
-                                    goodness_bottom=fit_para["goodness_bottom"],
-                                    is_smooth=smooth_para["is_smooth"], smooth_para=smooth_para["smooth_para"],
-                                    least_peaks_num=fit_para["least_peaks_num"],
-                                    group_along_tube_d=group_para_d["group_along_tube"],
-                                    group_cross_tube_d=group_para_d["group_cross_tube"],
-                                    group_along_tube_tof=group_para_tof["group_along_tube"],
-                                    group_cross_tube_tof=group_para_tof["group_cross_tube"],
-                                    pixels_per_tube=pixels,
-                                    order=fit_para["order"], mode=self.conf["mode"], check_point=self.conf["check_point"],
-                                    anchor_point=self.conf["anchor_point"],parallel=is_parallel,max_workers=max_workers)
-            plot_info_all.append(plot_info)
+                                        order=fit_para["order"], mode=self.conf["mode"], check_point=self.conf["check_point"],
+                                        anchor_point=self.conf["anchor_point"],parallel=is_parallel,max_workers=max_workers)
+                plot_info_all.append(plot_info)
         return plot_info_all
 
     def check_modules(self):
@@ -115,9 +182,22 @@ class CSNS_Offset(PixelOffsetCalNeutronData):
         plt.show()
 
     def __get_result_module(self,module):
-        data = load_neutron_data(self.conf["sam_fn"], f'{self.conf["param_path"]}/{module}.txt',
-                                     module, self.conf["first_flight_distance"])
+        if 'LA_offset' in self.conf:
+            if self.conf['LA_offset']:
+                if self.conf['check_second']:
+                    data = load_neutron_data(self.conf["sam_fn"][1], f'{self.conf["param_path"]}/{module}.txt',
+                                             module, self.conf["first_flight_distance"])
+                else:
+                    data = load_neutron_data(self.conf["sam_fn"][0], f'{self.conf["param_path"]}/{module}.txt',
+                                             module, self.conf["first_flight_distance"])
+            else:
+                data = load_neutron_data(self.conf["sam_fn"][0], f'{self.conf["param_path"]}/{module}.txt', module,
+                                         self.conf["first_flight_distance"])
+        else:
+            data = load_neutron_data(self.conf["sam_fn"], f'{self.conf["param_path"]}/{module}.txt', module,
+                                     self.conf["first_flight_distance"])
         cal_fn = self.conf["save_path"] + "/" + module + "_offset.cal"
+        print(cal_fn)
         cal_dict = read_cal(cal_fn)
         data = self.correct_tof_to_d(data, cal_dict)
         data = mask_neutron_data(data, cal_dict["mask_list"])
@@ -135,10 +215,11 @@ class CSNS_Offset(PixelOffsetCalNeutronData):
             else:
                 y_tmp, _ = rebin(x, y, e, self.xnew)
                 y_final += y_tmp
-        background = baseline_alg(y_final, lam=1e5, p=0.01)
-        y_final -= background
-        if y_final.max()>0:
-            y_final/=y_final.max()
+        # background = baseline_alg(cleaned_data, lam=1e5, p=0.01)
+        # y_final -= background
+        cleaned_y_final = [x for x in y_final if not math.isnan(x)]
+        if max(cleaned_y_final)>0:
+            y_final/=max(cleaned_y_final)
         return self.xnew,y_final
 
     def sum_modules(self):
@@ -148,8 +229,20 @@ class CSNS_Offset(PixelOffsetCalNeutronData):
         x_list = []
         y_list = []
         for module in self.moduleList:
-            data = load_neutron_data(self.conf["sam_fn"], f'{self.conf["param_path"]}/{module}.txt',
-                                     module, self.conf["first_flight_distance"])
+            if 'LA_offset' in self.conf:
+                if self.conf['LA_offset']:
+                    if self.conf['check_second']:
+                        data = load_neutron_data(self.conf["sam_fn"][1], f'{self.conf["param_path"]}/{module}.txt',
+                                                 module, self.conf["first_flight_distance"])
+                    else:
+                        data = load_neutron_data(self.conf["sam_fn"][0], f'{self.conf["param_path"]}/{module}.txt',
+                                                 module, self.conf["first_flight_distance"])
+                else:
+                    data = load_neutron_data(self.conf["sam_fn"][0], f'{self.conf["param_path"]}/{module}.txt', module,
+                                             self.conf["first_flight_distance"])
+            else:
+                data = load_neutron_data(self.conf["sam_fn"], f'{self.conf["param_path"]}/{module}.txt', module,
+                                         self.conf["first_flight_distance"])
             cal_fn = self.conf["save_path"] + "/" + module + "_offset.cal"
             cal_dict = read_cal(cal_fn)
             data = self.correct_tof_to_d(data, cal_dict)
@@ -212,6 +305,7 @@ class Offset_Plot():
         try:
             fig, ax = plt.subplots()
             for i, para in enumerate(plot_para):
+                print(para[1], para[2])
                 ax.plot(para[1], para[2], label=para[0])
                 if len(para) > 3:
                     for j in range(len(para[3][0][:,0])):
@@ -224,8 +318,11 @@ class Offset_Plot():
                 ax.axvline(x=j, linestyle='--', linewidth=1,
                            label='Standard Peak Position' if j == d_std[0] else "")
             ax.grid(True)
-            ax.legend()
+            ax.legend(fontsize=14)
 
+            # Set the font size for the tick labels on both axes
+            ax.tick_params(axis='both', which='major', labelsize=14)
+            ax.tick_params(axis='both', which='minor', labelsize=14)
             return fig, ax
         except:
             traceback.print_exc()

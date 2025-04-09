@@ -96,7 +96,7 @@ class CSNS_Diffraction(Diffraction):
                 neutron_data = load_neutron_data(nxsfn_list, txt_fn, module,
                                                  self.conf['first_flight_distance'], self.conf["T0_offset"])
 
-            if name=="v" and self.conf["vanadium_correction"]["do_correction"]:
+            if name == "v" and self.conf["vanadium_correction"]["do_correction"]:
                 neutron_data = self.calculate_pattern(neutron_data,self.conf["vanadium_correction"])
             else:
                 neutron_data = self.calculate_pattern(neutron_data)
@@ -140,8 +140,14 @@ class CSNS_Diffraction(Diffraction):
 
         if name=="v":
             if self.conf["vanadium_name"] == "VNi":
-                pass
-            else:
+                if "VNi_peaks" in self.conf.keys():
+                    if len(self.conf["VNi_peaks"][self.groupname]["peaks"]) > 0 and self.conf["VNi_peaks"]['isPeakCut']:
+                        ynew = strip_peaks(self.xnew, ynew, self.conf["VNi_peaks"][self.groupname]["peaks"],
+                                           self.conf["VNi_peaks"][self.groupname]["range"])
+                if self.conf["vanadium_smooth"]["VNi_smooth"] is True:
+                    ynew = smooth(ynew, self.conf["vanadium_smooth"][self.groupname]["npoint"],
+                                self.conf["vanadium_smooth"][self.groupname]["order"])
+            elif self.conf["vanadium_name"] == "V":
                 ynew = strip_peaks(self.xnew, ynew, self.conf["vanadium_peaks"][self.groupname]["peaks"],
                                                       self.conf["vanadium_peaks"][self.groupname]["range"])
                 # ynew = strip_peaks(self.xnew,ynew,self.conf["vanadium_peaks"][self.groupname]["peaks"],
@@ -149,6 +155,22 @@ class CSNS_Diffraction(Diffraction):
                 ynew = smooth(ynew, self.conf["vanadium_smooth"][self.groupname]["npoint"], self.conf["vanadium_smooth"][self.groupname]["order"])
 
             enew = np.zeros(ynew.size)
+
+        if name=="samBG":
+            if "BG_peaks" in self.conf.keys():
+                if len(self.conf["BG_peaks"][self.groupname]["peaks"]) > 0 and self.conf["BG_peaks"]['isPeakCut'] is True:
+                    ynew = strip_peaks(self.xnew, ynew, self.conf["BG_peaks"][self.groupname]["peaks"],
+                                       self.conf["BG_peaks"][self.groupname]["range"])
+                    ynew = smooth(ynew, self.conf["BG_smooth"][self.groupname]["npoint"],
+                                self.conf["BG_smooth"][self.groupname]["order"])
+        if name=="vBG":
+            if "BG_peaks" in self.conf.keys():
+                if len(self.conf["BG_peaks"][self.groupname]["peaks"]) > 0 and self.conf["BG_peaks"]['isPeakCut'] is True:
+                    ynew = strip_peaks(self.xnew, ynew, self.conf["BG_peaks"][self.groupname]["peaks"],
+                                       self.conf["BG_peaks"][self.groupname]["range"])
+                    ynew = smooth(ynew, self.conf["BG_smooth"][self.groupname]["npoint"],
+                                self.conf["BG_smooth"][self.groupname]["order"])
+
         if isSave:
             runno = self.conf[name+"_run"][0]
             fn = self.conf["data_path"]+"/"+runno+"/"+name+"_"+runno+"_"+self.detector+"_"+self.suffix
@@ -205,15 +227,17 @@ class CSNS_Diffraction(Diffraction):
                 else:
                     y_v,e_v = self.process_bank("v",[],True)
             other_plot_data['v'] = [self.xnew, y_v, e_v]
-
+            print("finsih v for ", self.conf["v_run"], self.detector)
             if len(self.conf["vBG_run"])>0:
                 if self.conf["vBG_run_mode"]=="dat":
                     if self.ui is True:
                         fn = self.conf["vBG_fn"][0] + "/vBG_" + self.conf["vBG_run"][0] + "_" + self.detector + "_" + self.suffix
                     else:
-                        runno = self.conf["samBG_run"][0]
-                        fn = self.conf["save_path"]+"/"+runno+"/vBG"+self.conf["vBG_run"][0]+"_"+self.detector+"_"+self.suffix
+                        runno = self.conf["vBG_run"][0]
+                        fn = self.conf["data_path"]+"/"+runno+"/vBG_"+self.conf["vBG_run"][0]+"_"+self.detector+"_"+self.suffix
+                        print(fn)
                     if check_file(fn):
+                        print(f"find such file:{fn}")
                         x,y,e = np.loadtxt(fn,unpack=True)
                         y_vBG,e_vBG = rebin(x,y,e,self.xnew)
                     else:
@@ -227,16 +251,49 @@ class CSNS_Diffraction(Diffraction):
                     else:
                         y_vBG, e_vBG = self.process_bank("vBG", [], True)
                 other_plot_data['vBG'] = [self.xnew, y_vBG, e_vBG]
+                print("finsih vBG for ", self.conf["v_run"], self.detector)
                 if self.conf["scale_v_bg"]>0:
                     y_v = y_v - self.conf["scale_v_bg"]*y_vBG
-            print("finsih v for ",self.conf["v_run"],self.detector)
 
         sam_plot_data = {}
         if self.conf["is_batch"]:
+
+            # txt_fn = self.conf["param_path"] + "/" + self.conf["normalization_monitor"] + ".txt"
+            # monitor_data = load_neutron_data(self.conf["sam_fn"], txt_fn, self.conf["normalization_monitor"],
+            #                                  self.conf["first_flight_distance"])
+            # nc = self.get_monitor_nc(monitor_data)
+            # nc = nc/23
+            # import glob
+            # self.conf["sam_fn"] = glob.glob(os.path.join("D:\BaiduSyncdisk\Research\My_ongoing_research_or_work\工程工作记录\\25_0108_给高分辨规约暑期timeslice数据\\time-slice-data", '*'))
+            # self.conf["sam_fn"] = sorted(self.conf["sam_fn"])
+
             for i in range(len(self.conf["sam_fn"])):
                 run_fn = self.conf["sam_fn"][i]
                 y_sam, e_sam = self.process_bank("sam",[run_fn],False)
+
+                # txt_data = np.loadtxt(run_fn)
+                # x_sam, y_sam = txt_data[:,0],txt_data[:,1]
+                # e_sam = np.sqrt(y_sam)
+                # y_sam,e_sam = rebin(x_sam,y_sam,e_sam,self.xnew)
+                #
+                # if i == 22:
+                #     nc1 =  nc * 1.36 / 5.65
+                #     y_sam /= nc1
+                #     e_sam /= nc1
+                #
+                # # elif i == 0 or i == 1 or i == 2 or i == 3 or i == 4:
+                # #     print(i)
+                # #     nc1 = nc *  0.5
+                # #     y_sam /= nc1
+                # #     e_sam /= nc1
+                # # if i == 22:
+                # #     nc = nc *  1.849 / 11.62
+                # else:
+                #     y_sam /= nc
+                #     e_sam /= nc
+
                 other_plot_data[f'sam_{i}'] = [self.xnew, y_sam, e_sam]
+
                 if len(self.conf["samBG_run"])>0:
                     y_sam = y_sam-self.conf["scale_sam_bg"]*y_samBG
                     e_sam = np.sqrt(e_sam**2+(self.conf["scale_sam_bg"]*e_samBG)**2)
@@ -251,9 +308,10 @@ class CSNS_Diffraction(Diffraction):
                 if self.ui is True:
                     sam_plot_data[f'sam_{i}'] = [self.xnew, y_sam, e_sam]
                 else:
+                    # self.conf["time_slice"] = True
                     if self.conf["time_slice"]:
                         runno = self.conf["sam_run"][0]
-                        suffix_tmp = str(i)+self.suffix
+                        suffix_tmp = str(i).zfill(2)+'_'+self.suffix
                         self.conf["slice_series"] = i
                         sam_plot_data[runno+f'_{i}'] = [self.xnew, y_sam, e_sam]
                     else:
@@ -266,7 +324,10 @@ class CSNS_Diffraction(Diffraction):
                     write_ascii(fn,self.xnew,y_sam,e_sam)
                     self.conf["current_runno"] = runno
                     output = DiffractionFormat(self.conf,self.tof,y_sam,e_sam)
-                    fn = path+"/"+runno+"_"+self.detector
+                    if self.conf["time_slice"]:
+                        fn = path+"/"+runno+"_"+self.detector+'_'+suffix_tmp[0:2]
+                    else:
+                        fn = path + "/" + runno + "_" + self.detector
                     output.writeGSAS(fn+".gsa")
                     output.writeZR(fn+".histogramIgor")
                     output.writeFP(fn+".dat")

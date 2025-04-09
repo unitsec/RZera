@@ -227,7 +227,7 @@
     "groupMA": [
       "bank09",
       "bank12"],
-    "groupSA": [
+    "groupLA": [
       "bank10",
       "bank11"]
   },
@@ -1275,6 +1275,33 @@
         [0.1,0.13]
       ]}
   },
+  "VNi_peaks": {
+    "isPeakCut": false,
+    "groupBS": {
+      "peaks": [2.1342],
+      "range": [[0.0129,0.0129]]
+    },
+    "groupBM": {
+      "peaks": [2.1342],
+      "range": [[0.0129,0.0129]]
+    },
+    "groupHA": {
+      "peaks": [2.1321],
+      "range": [[0.0165,0.0165]]
+    },
+    "groupSE": {
+      "peaks": [2.13445],
+      "range": [[0.01505,0.01505]]
+    },
+    "groupMA": {
+      "peaks": [2.13845],
+      "range": [[0.03925,0.03925]]
+    },
+    "groupLA": {
+      "peaks": [],
+      "range": []
+    }
+  },
   "d_rebin": {
     "groupBS": [
       0.2,
@@ -1296,7 +1323,7 @@
       0.15,
       13,
       26000],
-    "groupSA": [
+    "groupLA": [
       0.25,
       30,
       26000]
@@ -1327,13 +1354,14 @@
       "pixel": 109070061,
       "2_theta": 45.7
     },
-    "groupSA": {
+    "groupLA": {
       "factor": 3779.54191,
       "pixel": 110070061,
       "2_theta": 10.8
     }
   },
   "vanadium_smooth": {
+    "VNi_smooth": true,
     "groupBS": {
       "npoint": 21,
       "order": 3
@@ -1354,7 +1382,7 @@
       "npoint": 21,
       "order": 3
     },
-    "groupSA": {
+    "groupLA": {
       "npoint": 21,
       "order": 3
     }

@@ -32,7 +32,7 @@ class browse_file:
             # 设置对应的 QLineEdit 控件的文本为选择的文件夹路径
             lineEdit.setText(folder_path)
 
-    def select_nxsfiles(self, lineEdit,run_filePaths,parent=None):
+    def select_nxsfiles(self, lineEdit, run_filePaths,parent=None):
         dialog = FolderSelectionDialog(parent, self.last_selected_path or QtCore.QDir.currentPath())
         if dialog.exec_() == QtWidgets.QDialog.Accepted:
             folder_paths = dialog.selectedFolders()

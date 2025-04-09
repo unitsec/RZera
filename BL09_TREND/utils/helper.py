@@ -20,28 +20,56 @@ def pop_window(window_class, main_window):
         print(f"An error occurred: {e}")
         traceback.print_exc()  # 打印异常的堆栈跟踪
 
+def refresh(filterbox,list_dict,change_items):
+    filterbox.clear()
+    for name in list_dict.keys():
+        name_elements = name.split('_')
+        filter_elements = filterbox.get_item_names()
+        for name_element in name_elements:
+            if name_element not in filter_elements:
+                filterbox.add_item(name_element)
+    change_items.filter_items([])
 
 # 删除输入的列表和控件中的内容
 def lineedit_clear(run_filePaths, run_text):
     run_filePaths.clear()
     run_text.setText('')
 
-def ignore_pycache(dir, files):
-    """
-    忽略 __pycache__ 目录。
-    """
-    return [f for f in files if f == '__pycache__']
+def make_ignore_func(exclude):
+    def ignore_func(directory, files):
+        # 返回与排除列表匹配的文件或目录列表
+        ignored_files = []
+        for ex in exclude:
+            if '*' in ex:  # 处理包含 * 的模式
+                # 使用 str.replace() 方法将 '*' 替换为对应的字符串
+                clean_pattern = ex.replace('*', '')
+                for f in files:
+                    if ex.startswith('*') and ex.endswith('*'):
+                        # 模式如 *tensorflow*，匹配包含 clean_pattern 的所有文件
+                        if clean_pattern in f:
+                            ignored_files.append(f)
+                    elif ex.startswith('*'):
+                        # 模式如 *tensorflow，匹配以 clean_pattern 结尾的文件
+                        if f.endswith(clean_pattern):
+                            ignored_files.append(f)
+                    elif ex.endswith('*'):
+                        # 模式如 tensorflow*，匹配以 clean_pattern 开头的文件
+                        if f.startswith(clean_pattern):
+                            ignored_files.append(f)
+            else:
+                ignored_files.extend([f for f in files if f == ex])
+        return ignored_files
+    return ignore_func
 
-def copy_specified_items(source_dir, target_dir, items_to_copy):
+def copy_specified_items(source_dir, target_dir, items_to_copy, exclude=None):
     """
-    将指定的文件和文件夹从源目录复制到目标目录，忽略 __pycache__ 目录。
-
-    :param source_dir: 源工程目录的路径
-    :param target_dir: 目标目录的路径
-    :param items_to_copy: 需要复制的文件和文件夹名称列表
+    将指定的文件和文件夹从源目录复制到目标目录，并根据排除列表排除特定目录。
     """
     # 确保目标目录存在
     os.makedirs(target_dir, exist_ok=True)
+
+    # 使用 make_ignore_func 创建一个 ignore_func，传入排除列表
+    ignore_function = make_ignore_func(exclude) if exclude else None
 
     for item_name in items_to_copy:
         # 构建源和目标的完整路径
@@ -53,12 +81,13 @@ def copy_specified_items(source_dir, target_dir, items_to_copy):
             print(f"{item_name} does not exist in the source directory.")
             continue
 
-        # 如果是文件夹，使用 copytree 复制，并使用 ignore 参数排除 __pycache__
+        # 如果是文件夹
         if os.path.isdir(source_item):
-            shutil.copytree(source_item, target_item, ignore=ignore_pycache)
+            # 使用 copytree 进行复制，并排除指定项
+            shutil.copytree(source_item, target_item, ignore=ignore_function)
             print(f"Copied folder {item_name} to {target_item}")
 
-        # 如果是文件，使用 copy2 复制
+        # 如果是文件，直接复制
         elif os.path.isfile(source_item):
             shutil.copy2(source_item, target_item)
             print(f"Copied file {item_name} to {target_item}")
