@@ -24,8 +24,6 @@ To use: Unzip Rzera_env to the current folder. Run start.bat by double clicked.
 
 Here is a successful case with the following operations:
 
-Sure, here's the translation of the instructions into English:
-
 1. Double-click `start.bat`.
 2. Click Open.
 3. In the menu, select `offset correction` under `others`.
