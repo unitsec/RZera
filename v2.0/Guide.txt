@@ -1,0 +1,41 @@
+2025.5.16——————————————————————————————————————————————————————————————————————————
+使用方法：解压Rzera_env到当前文件夹后，双击start.bat即可。
+
+一个成功的案例，操作如下：
+1、双击start.bat；
+2、单击Open；
+3、选择菜单中others中的offset correction；
+4、单击Load Configure，选择example中的offset_run78.json；
+5、单击Select RUN File，选择example中的RUN0000078，在接下来的对话框中选择RUN0000078/detector.nxs；
+6、单击Select Instru File，选择example中的instrumentFiles文件夹；
+7、单击save and Check Parameter， 选择example中的offsetFiles_RUN0000078_15_4_tof文件夹；
+8、单击RUN；
+9、待计算完成，退出offset creation界面；
+10、单击Load Configure，选择example中的reduction_run78.json；
+11、单击Sample Run，选择example中的RUN0000078，在接下来的对话框中选择RUN0000078/detector.nxs；
+12、单击Van Run，选择example中的RUN0000079；
+13、单击Instru Folder，选择example中的instrumentFiles文件夹；
+14、单击Offset Folder，选择example中的offsetFiles_RUN0000078_15_4_d文件夹；
+15、单击Reduction，即可完成time-focus校正下的规约结果。
+
+——————————————————————————————————————————————————————————————————————————————————————————
+
+To use: Unzip Rzera_env to the current folder. Run start.bat by double clicked.
+
+Here is a successful case with the following operations:
+
+1. Double-click `start.bat`.
+2. Click Open.
+3. In the menu, select `offset correction` under `others`.
+4. Click `Load Configure`, and select `offset_run78.json` from the `example` folder.
+5. Click `Select RUN File`, then choose `RUN0000078` from the `example` folder, and in the subsequent dialog, select `RUN0000078/detector.nxs`.
+6. Click `Select Instru File`, and select the `instrumentFiles` folder in the `example` directory.
+7. Click `save and Check Parameter`, and choose the `offsetFiles_RUN0000078_15_4_tof` folder from the `example` directory.
+8. Click RUN.
+9. When the calculation is complete, exit the `offset creation` interface.
+10. Click `Load Configure`, and select `reduction_run78.json` from the `example` folder.
+11. Click `Sample Run`, select `RUN0000078` from the `example` folder, and then choose `RUN0000078/detector.nxs` in the subsequent dialog.
+12. Click `Van Run`, and select `RUN0000079` from the `example` folder.
+13. Click `Instru Folder`, and choose the `instrumentFiles` folder from the `example` directory.
+14. Click `Offset Folder`, and select the `offsetFiles_RUN0000078_15_4_d` folder from the `example` directory.
+15. Click Reduction to complete the reduction result under time-focus correction.

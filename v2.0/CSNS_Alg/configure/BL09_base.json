@@ -1,0 +1,1399 @@
+{
+  "create_time": "2024-09-12 15:44:33.791094",
+  "beamline_name": "HRD",
+  "beamline": "BL09",
+  "first_flight_distance": 78,
+  "normalization_monitor": "monitor01",
+  "bank_info": {
+    "bank01": [
+      "module10101",
+      "module10102",
+      "module10103",
+      "module10104",
+      "module10105",
+      "module10106",
+      "module10107",
+      "module10108",
+      "module10109",
+      "module10110",
+      "module10111",
+      "module10112"
+    ],
+    "bank02": [
+      "module10201",
+      "module10202",
+      "module10203",
+      "module10204",
+      "module10205",
+      "module10206",
+      "module10207",
+      "module10208",
+      "module10209",
+      "module10210",
+      "module10211",
+      "module10212",
+      "module10213",
+      "module10214"
+    ],
+    "bank03": [
+      "module10301",
+      "module10302",
+      "module10303",
+      "module10304",
+      "module10305",
+      "module10306",
+      "module10307",
+      "module10308",
+      "module10309",
+      "module10310",
+      "module10311",
+      "module10312"
+    ],
+    "bank04": [
+      "module10401",
+      "module10402",
+      "module10403",
+      "module10404",
+      "module10405",
+      "module10406",
+      "module10407",
+      "module10408",
+      "module10409",
+      "module10410",
+      "module10411",
+      "module10412"
+    ],
+    "bank05": [
+      "module10501",
+      "module10502",
+      "module10503",
+      "module10504",
+      "module10505",
+      "module10506",
+      "module10507",
+      "module10508",
+      "module10509",
+      "module10510",
+      "module10511",
+      "module10512",
+      "module10513",
+      "module10514"
+    ],
+    "bank06": [
+      "module10601",
+      "module10602",
+      "module10603",
+      "module10604",
+      "module10605",
+      "module10606",
+      "module10607",
+      "module10608",
+      "module10609",
+      "module10610",
+      "module10611",
+      "module10612"
+    ],
+    "bank07": [
+      "module10701",
+      "module10702",
+      "module10703",
+      "module10704",
+      "module10705",
+      "module10706",
+      "module10707",
+      "module10708",
+      "module10709",
+      "module10710",
+      "module10711",
+      "module10712"
+    ],
+    "bank08": [
+      "module10801",
+      "module10802",
+      "module10803",
+      "module10804",
+      "module10805",
+      "module10806",
+      "module10807",
+      "module10808",
+      "module10809",
+      "module10810",
+      "module10811",
+      "module10812"
+    ],
+    "bank09": [
+      "module10901",
+      "module10902",
+      "module10903",
+      "module10904",
+      "module10905",
+      "module10906",
+      "module10907",
+      "module10908",
+      "module10909",
+      "module10910",
+      "module10911",
+      "module10912"
+    ],
+    "bank10": [
+      "module11001",
+      "module11002",
+      "module11003",
+      "module11004",
+      "module11005",
+      "module11006",
+      "module11007",
+      "module11008",
+      "module11009",
+      "module11010",
+      "module11011",
+      "module11012"
+    ],
+    "bank11": [
+      "module11101",
+      "module11102",
+      "module11103",
+      "module11104",
+      "module11105",
+      "module11106",
+      "module11107",
+      "module11108",
+      "module11109",
+      "module11110",
+      "module11111",
+      "module11112"
+    ],
+    "bank12": [
+      "module11201",
+      "module11202",
+      "module11203",
+      "module11204",
+      "module11205",
+      "module11206",
+      "module11207",
+      "module11208",
+      "module11209",
+      "module11210",
+      "module11211",
+      "module11212"
+    ],
+    "bank13": [
+      "module11301",
+      "module11302",
+      "module11303",
+      "module11304",
+      "module11305",
+      "module11306",
+      "module11307",
+      "module11308",
+      "module11309",
+      "module11310",
+      "module11311",
+      "module11312"
+    ],
+    "bank14": [
+      "module11401",
+      "module11402",
+      "module11403",
+      "module11404",
+      "module11405",
+      "module11406",
+      "module11407",
+      "module11408",
+      "module11409",
+      "module11410",
+      "module11411",
+      "module11412"
+    ]
+  },
+  "group_info": {
+    "groupBS": [
+      "bank01",
+      "bank02",
+      "bank03",
+      "bank04",
+      "bank05",
+      "bank06"],
+    "groupBM": [
+      "bank02",
+      "bank05"
+    ],
+    "groupHA": [
+      "bank07",
+      "bank14"],
+    "groupSE": [
+      "bank08",
+      "bank13"],
+    "groupMA": [
+      "bank09",
+      "bank12"],
+    "groupLA": [
+      "bank10",
+      "bank11"]
+  },
+  "pixel_info": {
+    "module10101": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101010001
+    },
+    "module10102": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101020001
+    },
+    "module10103": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101030001
+    },
+    "module10104": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101040001
+    },
+    "module10105": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101050001
+    },
+    "module10106": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101060001
+    },
+    "module10107": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101070001
+    },
+    "module10108": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101080001
+    },
+    "module10109": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101090001
+    },
+    "module10110": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101100001
+    },
+    "module10111": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101110001
+    },
+    "module10112": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 101120001
+    },
+    "module10201": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102010001
+    },
+    "module10202": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102020001
+    },
+    "module10203": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102030001
+    },
+    "module10204": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102040001
+    },
+    "module10205": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102050001
+    },
+    "module10206": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102060001
+    },
+    "module10207": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102070001
+    },
+    "module10208": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102080001
+    },
+    "module10209": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102090001
+    },
+    "module10210": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102100001
+    },
+    "module10211": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102110001
+    },
+    "module10212": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102120001
+    },
+    "module10213": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102130001
+    },
+    "module10214": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 102140001
+    },
+    "module10301": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103010001
+    },
+    "module10302": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103020001
+    },
+    "module10303": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103030001
+    },
+    "module10304": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103040001
+    },
+    "module10305": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103050001
+    },
+    "module10306": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103060001
+    },
+    "module10307": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103070001
+    },
+    "module10308": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103080001
+    },
+    "module10309": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103090001
+    },
+    "module10310": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103100001
+    },
+    "module10311": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103110001
+    },
+    "module10312": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 103120001
+    },
+    "module10401": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104010001
+    },
+    "module10402": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104020001
+    },
+    "module10403": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104030001
+    },
+    "module10404": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104040001
+    },
+    "module10405": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104050001
+    },
+    "module10406": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104060001
+    },
+    "module10407": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104070001
+    },
+    "module10408": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104080001
+    },
+    "module10409": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104090001
+    },
+    "module10410": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104100001
+    },
+    "module10411": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104110001
+    },
+    "module10412": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 104120001
+    },
+    "module10501": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105010001
+    },
+    "module10502": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105020001
+    },
+    "module10503": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105030001
+    },
+    "module10504": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105040001
+    },
+    "module10505": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105050001
+    },
+    "module10506": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105060001
+    },
+    "module10507": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105070001
+    },
+    "module10508": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105080001
+    },
+    "module10509": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105090001
+    },
+    "module10510": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105100001
+    },
+    "module10511": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105110001
+    },
+    "module10512": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105120001
+    },
+    "module10513": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105130001
+    },
+    "module10514": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 105140001
+    },
+    "module10601": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106010001
+    },
+    "module10602": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106020001
+    },
+    "module10603": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106030001
+    },
+    "module10604": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106040001
+    },
+    "module10605": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106050001
+    },
+    "module10606": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106060001
+    },
+    "module10607": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106070001
+    },
+    "module10608": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106080001
+    },
+    "module10609": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106090001
+    },
+    "module10610": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106100001
+    },
+    "module10611": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106110001
+    },
+    "module10612": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 106120001
+    },
+    "module10701": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107010001
+    },
+    "module10702": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107020001
+    },
+    "module10703": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107030001
+    },
+    "module10704": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107040001
+    },
+    "module10705": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107050001
+    },
+    "module10706": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107060001
+    },
+    "module10707": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107070001
+    },
+    "module10708": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107080001
+    },
+    "module10709": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107090001
+    },
+    "module10710": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107100001
+    },
+    "module10711": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107110001
+    },
+    "module10712": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 107120001
+    },
+    "module10801": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108010001
+    },
+    "module10802": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108020001
+    },
+    "module10803": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108030001
+    },
+    "module10804": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108040001
+    },
+    "module10805": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108050001
+    },
+    "module10806": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108060001
+    },
+    "module10807": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108070001
+    },
+    "module10808": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108080001
+    },
+    "module10809": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108090001
+    },
+    "module10810": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108100001
+    },
+    "module10811": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108110001
+    },
+    "module10812": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 108120001
+    },
+    "module10901": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109010001
+    },
+    "module10902": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109020001
+    },
+    "module10903": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109030001
+    },
+    "module10904": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109040001
+    },
+    "module10905": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109050001
+    },
+    "module10906": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109060001
+    },
+    "module10907": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109070001
+    },
+    "module10908": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109080001
+    },
+    "module10909": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109090001
+    },
+    "module10910": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109100001
+    },
+    "module10911": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109110001
+    },
+    "module10912": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 109120001
+    },
+    "module11001": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110010001
+    },
+    "module11002": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110020001
+    },
+    "module11003": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110030001
+    },
+    "module11004": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110040001
+    },
+    "module11005": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110050001
+    },
+    "module11006": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110060001
+    },
+    "module11007": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110070001
+    },
+    "module11008": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110080001
+    },
+    "module11009": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110090001
+    },
+    "module11010": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110100001
+    },
+    "module11011": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110110001
+    },
+    "module11012": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 110120001
+    },
+    "module11101": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111010001
+    },
+    "module11102": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111020001
+    },
+    "module11103": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111030001
+    },
+    "module11104": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111040001
+    },
+    "module11105": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111050001
+    },
+    "module11106": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111060001
+    },
+    "module11107": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111070001
+    },
+    "module11108": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111080001
+    },
+    "module11109": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111090001
+    },
+    "module11110": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111100001
+    },
+    "module11111": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111110001
+    },
+    "module11112": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 111120001
+    },
+    "module11201": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112010001
+    },
+    "module11202": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112020001
+    },
+    "module11203": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112030001
+    },
+    "module11204": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112040001
+    },
+    "module11205": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112050001
+    },
+    "module11206": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112060001
+    },
+    "module11207": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112070001
+    },
+    "module11208": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112080001
+    },
+    "module11209": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112090001
+    },
+    "module11210": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112100001
+    },
+    "module11211": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112110001
+    },
+    "module11212": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 112120001
+    },
+    "module11301": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113010001
+    },
+    "module11302": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113020001
+    },
+    "module11303": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113030001
+    },
+    "module11304": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113040001
+    },
+    "module11305": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113050001
+    },
+    "module11306": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113060001
+    },
+    "module11307": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113070001
+    },
+    "module11308": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113080001
+    },
+    "module11309": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113090001
+    },
+    "module11310": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113100001
+    },
+    "module11311": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113110001
+    },
+    "module11312": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 113120001
+    },
+    "module11401": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114010001
+    },
+    "module11402": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114020001
+    },
+    "module11403": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114030001
+    },
+    "module11404": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114040001
+    },
+    "module11405": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114050001
+    },
+    "module11406": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114060001
+    },
+    "module11407": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114070001
+    },
+    "module11408": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114080001
+    },
+    "module11409": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114090001
+    },
+    "module11410": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114100001
+    },
+    "module11411": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114110001
+    },
+    "module11412": {
+      "xpixels": 8,
+      "ypixels": 150,
+      "stepbyrow": "y",
+      "start": 114120001
+    }
+  },
+  "multiply_factor_fullprof": 4,
+  "vanadium_peaks": {
+    "groupBS": {
+      "peaks": [
+        2.138489
+      ],
+      "range": [
+        [0.1,0.13]
+      ]}
+  },
+  "VNi_peaks": {
+    "isPeakCut": false,
+    "groupBS": {
+      "peaks": [2.1342],
+      "range": [[0.0129,0.0129]]
+    },
+    "groupBM": {
+      "peaks": [2.1342],
+      "range": [[0.0129,0.0129]]
+    },
+    "groupHA": {
+      "peaks": [2.1321],
+      "range": [[0.0165,0.0165]]
+    },
+    "groupSE": {
+      "peaks": [2.13445],
+      "range": [[0.01505,0.01505]]
+    },
+    "groupMA": {
+      "peaks": [2.13845],
+      "range": [[0.03925,0.03925]]
+    },
+    "groupLA": {
+      "peaks": [],
+      "range": []
+    }
+  },
+  "d_rebin": {
+    "groupBS": [
+      0.2,
+      4,
+      14000],
+    "groupBM": [
+      0.2,
+      4,
+      14000],
+    "groupHA": [
+      0.06,
+      4.75,
+      26000],
+    "groupSE": [
+      0.1,
+      6.3,
+      26000],
+    "groupMA": [
+      0.15,
+      13,
+      26000],
+    "groupLA": [
+      0.25,
+      30,
+      26000]
+  },
+  "focus_point": {
+    "groupBS": {
+      "factor": 40431.87478,
+      "pixel": 102140061,
+      "2_theta": 177
+    },
+    "groupBM": {
+      "factor": 40431.87478,
+      "pixel": 102140061,
+      "2_theta": 177
+    },
+    "groupHA": {
+      "factor": 35559.69469,
+      "pixel": 107070061,
+      "2_theta": 125.1
+    },
+    "groupSE": {
+      "factor": 27621.25935,
+      "pixel": 108070061,
+      "2_theta": 87.2
+    },
+    "groupMA": {
+      "factor": 15560.56026,
+      "pixel": 109070061,
+      "2_theta": 45.7
+    },
+    "groupLA": {
+      "factor": 3779.54191,
+      "pixel": 110070061,
+      "2_theta": 10.8
+    }
+  },
+  "vanadium_smooth": {
+    "VNi_smooth": true,
+    "groupBS": {
+      "npoint": 21,
+      "order": 3
+    },
+    "groupBM": {
+      "npoint": 21,
+      "order": 3
+    },
+    "groupHA": {
+      "npoint": 21,
+      "order": 3
+    },
+    "groupSE": {
+      "npoint": 21,
+      "order": 3
+    },
+    "groupMA": {
+      "npoint": 21,
+      "order": 3
+    },
+    "groupLA": {
+      "npoint": 21,
+      "order": 3
+    }
+  },
+  "vanadium_name": "VNi",
+  "vanadium_correction": {
+    "atten_xs": 2.8,
+    "scatt_xs": 5.1,
+    "density_num": 0.031724,
+    "radius": 0.3,
+    "beam_height": 3,
+    "do_correction": true
+  }
+}
