@@ -1,0 +1,2 @@
+# pixelID   x   y   z   l2  two_theta   azimuthal   polar_width azimuthal_width
+201010001 0.0 0.0 -0.457 0.457 0 0 0 0
