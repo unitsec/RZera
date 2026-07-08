@@ -1,0 +1,27 @@
+name: openRongzai
+channels:
+  - mantidproject
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pyqt=5
+  - mantid::mantid
+  - reportlab
+  - openpyxl
+  - paramiko
+  - scp
+  - pymatgen
+  - pytorch
+  - scikit-learn
+  - seaborn
+  - cctbx
+  - sasmodels
+  - qscintilla2
+  - pip:
+    - ./rongzai-3.0-py3-none-any.whl
+
+# 说明：
+# - 保持最小依赖以优先保证 Mantid 可安装和可运行。
+# - 如果需要 Mantid GUI（mantidplot）出现 Qt/xcb 问题，请确保远端有可用 DISPLAY（SSH -Y/X11 转发、VNC 或 Xpra），或在必要时安装系统级的 xcb 依赖库。
+# - 若遇到依赖冲突，建议先创建仅包含 python+mantid 的最小环境进行测试，然后再逐步添加其它包。

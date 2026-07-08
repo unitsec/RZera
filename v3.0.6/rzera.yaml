@@ -1,0 +1,71 @@
+name: rzera
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/  # 清华镜像源
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/  # 清华镜像源
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/  # 清华镜像源
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pyqt=5
+  - qscintilla2
+  - scipy
+  - scikit-learn
+  - seaborn
+  - cctbx-base
+  - pytorch
+  - pycifrw
+  - paramiko
+  - numpy==1.26.4
+  - pandas=2.2.2
+  - matplotlib=3.9.2
+  - pillow=10.4.0
+  - h5py=3.11.0
+  - libffi
+  - xarray=2024.6.0
+  - scp
+  - pip:
+      - pymatgen==2025.4.10
+      - kafka-python==2.1.2
+      - pygments==2.18.0
+      - pyinstaller==6.10.0
+      - pyinstaller-hooks-contrib==2024.8
+      - redis==5.0.8
+      - ./rongzai-3.0-py3-none-any.whl
+      - tqdm==4.67.1
+      - flatbuffers
+      - openpyxl>=3.1.0
+      - bumps
+      - cffi
+      - docutils
+      - dominate
+      - html2text
+      - html5lib
+      - ipython
+      - jsonschema
+      - lxml
+      - mako
+      - numba
+      - packaging
+      - periodictable
+      - platformdirs
+      - pyausaxs==1.0.4
+      - pybind11
+      - pylint
+      - pyopencl
+      - pyopengl
+      - pyparsing
+      - pytools
+      - qtconsole
+      - sasdata
+      - sasmodels
+      - siphash24
+      - sphinx
+      - superqt
+      - tccbox
+      - twisted
+      - uncertainties
+      - xhtml2pdf
+      - zope
+      - requests
