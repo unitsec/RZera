@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>995</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>3ds</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>RongZai Agent</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 按钮样式：科技蓝主色调 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+}
+QPushButton:hover {
+    background-color: #2980b9;
+}
+QPushButton:pressed {
+    background-color: #2471a3;
+}
+
+/* 主按钮强化（预测按钮） */
+QPushButton#predict_button {
+    background-color: #2ecc71;
+    font-size: 14px;
+    padding: 10px 24px;
+}
+QPushButton#predict_button:hover {
+    background-color: #27ae60;
+}
+
+/* 输入框样式：深色透明+细边框 */
+QLineEdit {
+    color: black;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(155, 164, 180, 0.3);
+}
+QLineEdit:focus {
+    border: 1px solid #3498db;
+}
+QLineEdit::placeholder {
+    color: rgba(155, 164, 180, 0.5);
+}
+
+/* 图形视图：深色背景+圆角 */
+QGraphicsView {
+    border-radius: 8px;
+    border: 1px solid rgba(155, 164, 180, 0.2);
+}
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>20</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="RongZai_Agent">
+     <property name="font">
+      <font>
+       <family>3ds</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="load_pattern_button">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <weight>62</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Load Pattern</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="load_pattern_text">
+          <property name="placeholderText">
+           <string>Select or enter pattern file path...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>250</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="load_cif_button">
+          <property name="text">
+           <string>Load CIF</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="load_cif_text">
+          <property name="placeholderText">
+           <string>Select or enter CIF file path...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="open_agent_button">
+          <property name="text">
+           <string>Open RongZai Agent</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
