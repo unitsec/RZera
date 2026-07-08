@@ -1,2 +1,4 @@
 You can find the test run data in RZera/v1.2/Example_data, but don't use the other files in the directory.
 You can find the test offset/instrument/mask files in RZera/v3.0.6/paramFiles.
+
+How to start: create a virual environment using rzera.yaml, then "python rzera.py"
