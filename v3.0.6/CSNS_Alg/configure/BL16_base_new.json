@@ -1,0 +1,434 @@
+{
+  "create_time": "2024-09-12 11:26:50.866439",
+  "beamline_name": "MPI",
+  "beamline": "BL16",
+  "first_flight_distance": 30,
+  "normalization_monitor": "monitor01",
+  "monitor_info": ["monitor01"],
+  "wave_max": 4.5,
+  "wave_min": 0.1,
+  "pc_factor" : 1E7,
+  "bank_info": {
+    "bank02": [
+      "module10203"
+    ],
+    "bank03": [
+      "module10303",
+      "module10304"
+    ],
+    "bank04": [
+      "module10403",
+      "module10404",
+      "module10405"
+    ],
+    "bank05": [
+      "module10502",
+      "module10503",
+      "module10504",
+      "module10505"
+    ],
+    "bank06": [
+      "module10602",
+      "module10603"
+    ],
+    "bank07": [
+      "module10701",
+      "module10702",
+      "module10703",
+      "module10704"
+    ],
+    "bank08": [
+      "module10801",
+      "module10802",
+      "module10803",
+      "module10804"
+    ],
+    "bank09": [
+      "module10902",
+      "module10903"
+    ],
+    "bank10": [
+      "module11002",
+      "module11003",
+      "module11004",
+      "module11005"
+    ],
+    "bank11": [
+      "module11104",
+      "module11105"
+    ],
+    "bank12": [
+      "module11203",
+      "module11204"
+    ],
+    "bank13": [
+      "module11303"
+    ]
+  },
+  "group_info": {
+    "group2": [
+      "bank02",
+      "bank13"
+    ],
+    "group3": [
+      "bank03",
+      "bank12"
+    ],
+    "group4": [
+      "bank04",
+      "bank11"
+    ],
+    "group5": [
+      "bank05",
+      "bank10"
+    ],
+    "group6": [
+      "bank06",
+      "bank09"
+    ],
+    "group7": [
+      "bank07",
+      "bank08"
+    ]
+  },
+  "pixel_info": {
+    "module10203": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 102030001
+    },
+    "module10204": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 102040001
+    },
+    "module10205": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 102050001
+    },
+    "module10303": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 103030001
+    },
+    "module10304": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 103040001
+    },
+    "module10403": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 104030001
+    },
+    "module10404": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 104040001
+    },
+    "module10405": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 104050001
+    },
+    "module10502": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 105020001
+    },
+    "module10503": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 105030001
+    },
+    "module10504": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 105040001
+    },
+    "module10505": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 105050001
+    },
+    "module10602": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 106020001
+    },
+    "module10603": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 106030001
+    },
+    "module10701": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 107010001
+    },
+    "module10702": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 107020001
+    },
+    "module10703": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 107030001
+    },
+    "module10704": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 107040001
+    },
+    "module10801": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 108010001
+    },
+    "module10802": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 108020001
+    },
+    "module10803": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 108030001
+    },
+    "module10804": {
+      "xpixels": 60,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 108040001
+    },
+    "module10902": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 109020001
+    },
+    "module10903": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 109030001
+    },
+    "module11002": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 110020001
+    },
+    "module11003": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 110030001
+    },
+    "module11004": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 110040001
+    },
+    "module11005": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 110050001
+    },
+    "module11104": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 111040001
+    },
+    "module11105": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 111050001
+    },
+    "module11203": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 112030001
+    },
+    "module11204": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 112040001
+    },
+    "module11303": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 113030001
+    },
+    "module11304": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 113040001
+    },
+    "module11305": {
+      "xpixels": 100,
+      "ypixels": 8,
+      "stepbyrow": "x",
+      "start": 113050001
+    }
+  },
+  "multiply_factor_fullprof": 4,
+  "default_peaks_for_cut": {
+    "vanadium_peaks": {"group2": [[2.038489,2.268489]],
+                        "group3": [[1.202831,1.252831],[1.466578,1.566578],[2.078489,2.228489]],
+                        "group4": [[0.794731,0.824731],[0.944275,0.979275],[1.052195,1.092195],[1.206998,1.276998],[1.484722,1.544722],[2.077311,2.197311]],
+                        "group5": [[0.702326,0.732326],[0.793687,0.828637],[0.859934,0.889934],[0.945235,0.970235],[1.047655,1.087655],[1.214278,1.264278],[1.493321,1.533321],[2.117655,2.167655]],
+                        "group6": [[0.602911,0.632911],[0.63034, 0.66034], [0.698206, 0.728206], [0.741761, 0.771761], [0.794433, 0.824433], [0.85926, 0.88926], [0.943333, 0.973333], [1.055767, 1.085767], [1.220873, 1.250873], [1.498414, 1.528414], [2.1235, 2.1535]],
+                        "group7": [[0.476458, 0.506458], [0.538213, 0.568213], [0.578559, 0.608559], [0.603261, 0.633261], [0.630433, 0.660433], [0.698775, 0.728775], [0.7418, 0.7718], [0.794288, 0.824288], [0.859336, 0.889336], [0.942499, 0.972499], [1.055304, 1.085304], [1.220806, 1.250806], [1.49829, 1.52829], [2.1246, 2.1546]]}
+  },
+  "default_smooth": {
+    "vanadium_smooth": {"group2": {"npoint": 21, "order": 3},
+                        "group3": {"npoint": 21, "order": 3},
+                        "group4": {"npoint": 21, "order": 3},
+                        "group5": {"npoint": 51, "order": 3},
+                        "group6": {"npoint": 51, "order": 3},
+                        "group7": {"npoint": 51, "order": 3}}
+  },
+  "d_rebin": {
+    "mode": "uniform",
+    "group2": [
+      0.4,
+      20.2,
+      2000
+    ],
+    "group3": [
+      0.23,
+      6,
+      3000
+    ],
+    "group4": [
+      0.12,
+      3.95,
+      1600
+    ],
+    "group5": [
+      0.1,
+      2.82,
+      1600
+    ],
+    "group6": [
+      0.08,
+      2.3,
+      2400
+    ],
+    "group7": [
+      0.06,
+      2.19,
+      2600
+    ]
+  },
+  "focus_point": {
+    "group2": {
+      "DIFA": 5.3424928752568945,
+      "DIFB": 8.678887801918046,
+      "DIFC": 1750.3940585617074,
+      "ZERO": 10.039203898261796,
+      "pixel": 102030450,
+      "2_theta": 15
+    },
+    "group3": {
+      "DIFA":1.3457530613661994,
+      "DIFB": -7.282587120363353,
+      "DIFC": 4266.519808584087,
+      "ZERO": 40.935278322370614,
+      "pixel": 103030450,
+      "2_theta": 36
+    },
+    "group4": {
+      "DIFA": -3.121581088675139,
+      "DIFB": -4.639565021524907,
+      "DIFC": 6872.782001510185,
+      "ZERO": 14.590826827378526,
+      "pixel": 104030450,
+      "2_theta": 59
+    },
+    "group5": {
+      "DIFA": -2.773782385159114,
+      "DIFB": -14.239510067597374,
+      "DIFC": 10265.470951206315,
+      "ZERO": 38.36742782868781,
+      "pixel": 105030450,
+      "2_theta": 93
+    },
+    "group6": {
+      "DIFA": 0.5249190887762158,
+      "DIFB": -11.78821194478998,
+      "DIFC": 13741.383850787524,
+      "ZERO": 40.178806508677475,
+      "pixel": 106030450,
+      "2_theta": 133
+    },
+    "group7": {
+      "DIFA": 4.161254369321684,
+      "DIFB": -18.55215170724944,
+      "DIFC": 15482.065914193323,
+      "ZERO": 56.97089028819995,
+      "pixel": 107030270,
+      "2_theta": 163
+    }
+  },
+  "q_rebin": {
+    "group2": [0.5,14,200],
+    "group3": [1.2,25,500],
+    "group4": [1.6,30,800],
+    "group5": [2.5,50,1000],
+    "group6": [3.3,55,1200],
+    "group7": [3.2,70,1500],
+    "merge": [0.5,50,1000]
+  },
+  "resolution_information" : {
+                            "group2": {"a": 0.00893, "c": 0.0197},
+                            "group3": {"a": 0.0063, "c": 0.01384},
+                            "group4": {"a": 0.00719,"c": 0.00077},
+                            "group5": {"a": 0.00531, "c": -0.00154},
+                            "group6": {"a": 0.00319,"c": -0.00298},
+                            "group7": {"a": 0.00242, "c": -0.00376}
+                          },
+  "rongzai_agent_config": {
+                    "server_host":"10.1.252.95",
+                    "server_port": 22,
+                    "remote_reduced_dir": "/home/dur/rongzai-agent/datasets/BL16/RUNdataFiles",
+                    "web_url": "http://10.1.252.95:8081"
+  },
+  "event_target_directory": "/data1/nexus_data/sliceData/",
+  "event_source_directory": "/dg_expdata/CSNSDATA/TS1/BL16/",
+  "event_source_ip": "dur@10.1.252.95",
+  "event_source_port": 22,
+  "event_source_password": ""
+}

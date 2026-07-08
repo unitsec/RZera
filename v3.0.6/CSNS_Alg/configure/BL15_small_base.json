@@ -1,0 +1,711 @@
+{
+  "create_time": "2024-08-28 14:44:05.828137",
+  "beamline_name": "HP",
+  "beamline": "BL15_small",
+  "first_flight_distance": 22.5,
+  "normalization_monitor": "monitor01",
+  "monitor_info": ["monitor01"],
+  "wave_max": 5.8,
+  "wave_min": 0.71,
+  "pc_factor" : 1E7,
+  "bank_info": {
+    "bank11": [
+      "module11101",
+      "module11102",
+      "module11103",
+      "module11104",
+      "module11105",
+      "module11106",
+      "module11107",
+      "module11108",
+      "module11109",
+      "module11110",
+      "module11111",
+      "module11112",
+      "module11113"
+    ],
+    "bank12": [
+      "module11201",
+      "module11202",
+      "module11203",
+      "module11204",
+      "module11205",
+      "module11206",
+      "module11207",
+      "module11208",
+      "module11209",
+      "module11210",
+      "module11211"
+    ],
+    "bank13": [
+      "module11301",
+      "module11302",
+      "module11303",
+      "module11304",
+      "module11305",
+      "module11306",
+      "module11307",
+      "module11308",
+      "module11309",
+      "module11310",
+      "module11311",
+      "module11312"
+    ],
+    "bank14": [
+      "module11402",
+      "module11403",
+      "module11404",
+      "module11405",
+      "module11406",
+      "module11407",
+      "module11408",
+      "module11409",
+      "module11410",
+      "module11411",
+      "module11412",
+      "module11413"
+    ],
+    "bank15": [
+      "module11501",
+      "module11502",
+      "module11503",
+      "module11504",
+      "module11505",
+      "module11506",
+      "module11507",
+      "module11508",
+      "module11509",
+      "module11510",
+      "module11511"
+    ],
+    "bank16": [
+      "module11601",
+      "module11602",
+      "module11603",
+      "module11604",
+      "module11605",
+      "module11606",
+      "module11607",
+      "module11608",
+      "module11609",
+      "module11610",
+      "module11611",
+      "module11612",
+      "module11613"
+    ],
+    "bank17": [
+      "module11201",
+      "module11202",
+      "module11203",
+      "module11204",
+      "module11205",
+      "module11206",
+      "module11207",
+      "module11208",
+      "module11209",
+      "module11210"
+    ],
+    "bank18": [
+      "module11502",
+      "module11503",
+      "module11504",
+      "module11505",
+      "module11506",
+      "module11507",
+      "module11508",
+      "module11509",
+      "module11510",
+      "module11511"
+    ]
+  },
+  "group_info": {
+    "groupSA": [
+      "bank11",
+      "bank16"
+    ],
+    "groupMA": [
+      "bank12",
+      "bank15"
+    ],
+    "groupHA": [
+      "bank13",
+      "bank14"
+    ],
+    "groupAA": [
+      "bank17",
+      "bank18"
+    ]
+  },
+  "pixel_info": {
+    "module11101": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111010001
+    },
+    "module11102": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111020001
+    },
+    "module11103": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111030001
+    },
+    "module11104": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111040001
+    },
+    "module11105": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111050001
+    },
+    "module11106": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111060001
+    },
+    "module11107": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111070001
+    },
+    "module11108": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111080001
+    },
+    "module11109": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111090001
+    },
+    "module11110": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111100001
+    },
+    "module11111": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111110001
+    },
+    "module11112": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111120001
+    },
+    "module11113": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 111130001
+    },
+    "module11201": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112010001
+    },
+    "module11202": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112020001
+    },
+    "module11203": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112030001
+    },
+    "module11204": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112040001
+    },
+    "module11205": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112050001
+    },
+    "module11206": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112060001
+    },
+    "module11207": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112070001
+    },
+    "module11208": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112080001
+    },
+    "module11209": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112090001
+    },
+    "module11210": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112100001
+    },
+    "module11211": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 112110001
+    },
+    "module11301": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113010001
+    },
+    "module11302": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113020001
+    },
+    "module11303": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113030001
+    },
+    "module11304": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113040001
+    },
+    "module11305": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113050001
+    },
+    "module11306": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113060001
+    },
+    "module11307": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113070001
+    },
+    "module11308": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113080001
+    },
+    "module11309": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113090001
+    },
+    "module11310": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113100001
+    },
+    "module11311": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113110001
+    },
+    "module11312": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 113120001
+    },
+    "module11402": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114020001
+    },
+    "module11403": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114030001
+    },
+    "module11404": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114040001
+    },
+    "module11405": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114050001
+    },
+    "module11406": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114060001
+    },
+    "module11407": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114070001
+    },
+    "module11408": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114080001
+    },
+    "module11409": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114090001
+    },
+    "module11410": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114100001
+    },
+    "module11411": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114110001
+    },
+    "module11412": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114120001
+    },
+    "module11413": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 114130001
+    },
+    "module11501": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115010001
+    },
+    "module11502": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115020001
+    },
+    "module11503": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115030001
+    },
+    "module11504": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115040001
+    },
+    "module11505": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115050001
+    },
+    "module11506": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115060001
+    },
+    "module11507": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115070001
+    },
+    "module11508": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115080001
+    },
+    "module11509": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115090001
+    },
+    "module11510": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115100001
+    },
+    "module11511": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 115110001
+    },
+    "module11601": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116010001
+    },
+    "module11602": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116020001
+    },
+    "module11603": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116030001
+    },
+    "module11604": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116040001
+    },
+    "module11605": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116050001
+    },
+    "module11606": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116060001
+    },
+    "module11607": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116070001
+    },
+    "module11608": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116080001
+    },
+    "module11609": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116090001
+    },
+    "module11610": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116100001
+    },
+    "module11611": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116110001
+    },
+    "module11612": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116120001
+    },
+    "module11613": {
+      "xpixels": 8,
+      "ypixels": 180,
+      "stepbyrow": "y",
+      "start": 116130001
+    },
+    "monitor01": {
+      "xpixels": 1,
+      "ypixels": 1,
+      "stepbyrow": "y",
+      "start": 311000001
+    }
+  },
+  "multiply_factor_fullprof": 4,
+  "default_peaks_for_cut": {
+    "vanadium_peaks": {"groupHA": [[0.59, 0.603], [0.621, 0.629], [0.636, 0.657], [0.703, 0.713], [0.721, 0.73], [0.756, 0.763], [0.852, 0.866], [0.908, 0.924], [0.951, 0.967], [0.967, 0.989], [0.99, 1.007], [1.01, 1.033], [1.035, 1.05], [1.057, 1.076], [1.087, 1.102], [1.0995, 1.1165], [1.113, 1.131], [1.177, 1.195], [1.204, 1.284], [1.291, 1.32], [1.346, 1.375], [1.4, 1.43], [1.473, 1.503], [1.5, 1.53], [1.617, 1.652], [1.816, 1.876], [1.89, 1.95], [1.948, 2.008], [2.125, 2.16], [2.159, 2.209], [2.29, 2.328], [2.33, 2.355], [2.399, 2.451], [2.545, 2.605], [2.61, 2.65], [2.77, 2.83]],
+                        "groupMA": [[0.7, 0.714], [0.72, 0.732], [0.755, 0.767], [0.777, 0.791], [0.821, 0.835], [0.848, 0.865], [0.9, 0.924], [0.933, 0.949], [0.949, 0.965], [0.967, 0.989], [0.99, 1.007], [1.008, 1.032], [1.033, 1.05], [1.084, 1.115], [1.175, 1.201], [1.239, 1.275], [1.289, 1.32], [1.346, 1.377], [1.398, 1.43], [1.5, 1.53], [1.615, 1.654], [1.671, 1.7], [1.711, 1.74], [1.816, 1.876], [1.948, 2.008], [1.902, 1.94], [2.115, 2.21], [2.297, 2.35], [2.381, 2.451], [2.6, 2.66], [2.77, 2.81]],
+                        "groupAA": [[0.7, 0.714], [0.72, 0.732], [0.755, 0.767], [0.777, 0.791], [0.821, 0.835], [0.848, 0.865], [0.9, 0.924], [0.933, 0.949], [0.949, 0.965], [0.967, 0.989], [0.99, 1.007], [1.008, 1.032], [1.033, 1.05], [1.084, 1.115], [1.175, 1.201], [1.239, 1.275], [1.289, 1.32], [1.346, 1.377], [1.398, 1.43], [1.5, 1.53], [1.615, 1.654], [1.671, 1.7], [1.711, 1.74], [1.816, 1.876], [1.948, 2.008], [1.902, 1.94], [2.115, 2.21], [2.297, 2.35], [2.381, 2.451], [2.6, 2.66], [2.77, 2.81]],
+                        "groupSA": [[0.9, 0.911], [0.918, 0.929], [0.933, 0.949], [0.949, 0.965], [0.967, 0.989], [0.99, 1.007], [1.01, 1.03], [1.037, 1.05], [1.057, 1.076], [1.085, 1.125], [1.175, 1.195], [1.227, 1.333], [1.34, 1.43], [1.5, 1.553], [1.602, 1.672], [1.695, 1.785], [1.79, 1.95], [2.069, 2.259], [2.27, 2.36], [2.361, 2.481], [2.61, 2.69], [2.73, 2.89], [3.09, 3.17], [4.59, 5.19]]},
+    "VNi_peaks": {"groupHA": [[2.08, 2.2]],
+                  "groupMA": [[2.0992, 2.1777]],
+                  "groupAA": [[2.0992, 2.1777]],
+                  "groupSA": [[2.08, 2.2]]},
+    "BG_peaks":{"groupHA": [[0.595, 0.622], [0.63, 0.66], [0.662, 0.682], [0.685, 0.705], [0.706, 0.713], [0.7152, 0.7262], [0.729, 0.75], [0.798, 0.85], [0.858, 0.87], [0.897, 0.911], [0.915, 0.929], [0.933, 0.949], [0.949, 0.987], [0.99, 1.007], [1.01, 1.032], [1.036, 1.051], [1.057, 1.076], [1.079, 1.102], [1.113, 1.139], [1.168, 1.195], [1.213, 1.236], [1.244, 1.28], [1.291, 1.325], [1.346, 1.38], [1.397, 1.43], [1.473, 1.503], [1.5, 1.53], [1.617, 1.652], [1.816, 1.876], [1.89, 1.906], [1.948, 2.008], [2.119, 2.145], [2.149, 2.209], [2.29, 2.328], [2.33, 2.355], [2.399, 2.449], [2.545, 2.605], [2.61, 2.65], [2.77, 2.83]],
+                "groupMA": [[0.725, 0.75], [0.794, 0.814], [0.815, 0.845], [0.851, 0.868], [0.892, 0.912], [0.918, 0.929], [0.932, 0.965], [0.967, 0.989], [0.99, 1.003], [1.006, 1.03], [1.032, 1.05], [1.055, 1.07], [1.072, 1.108], [1.113, 1.131], [1.142, 1.158], [1.175, 1.195], [1.213, 1.236], [1.205, 1.322], [1.346, 1.375], [1.4, 1.43], [1.465, 1.53], [1.587, 1.652], [1.816, 1.906], [1.948, 2.011], [2.055, 2.086], [2.119, 2.219], [2.24, 2.37], [2.395, 2.525], [2.76, 2.83]],
+                "groupAA": [[0.725, 0.75], [0.794, 0.814], [0.815, 0.845], [0.851, 0.868], [0.892, 0.912], [0.918, 0.929], [0.932, 0.965], [0.967, 0.989], [0.99, 1.003], [1.006, 1.03], [1.032, 1.05], [1.055, 1.07], [1.072, 1.108], [1.113, 1.131], [1.142, 1.158], [1.175, 1.195], [1.213, 1.236], [1.205, 1.322], [1.346, 1.375], [1.4, 1.43], [1.465, 1.53], [1.587, 1.652], [1.816, 1.906], [1.948, 2.011], [2.055, 2.086], [2.119, 2.219], [2.24, 2.37], [2.395, 2.525], [2.76, 2.83]],
+                "groupSA": [[0.9, 0.911], [0.918, 0.929], [0.933, 0.949], [0.949, 0.965], [0.967, 0.989], [0.99, 1.007], [1.01, 1.03], [1.037, 1.05], [1.057, 1.076], [1.083, 1.102], [1.109, 1.131], [1.17, 1.195], [1.207, 1.236], [1.237, 1.333], [1.34, 1.383], [1.39, 1.447], [1.5, 1.553], [1.602, 1.662], [1.76, 1.92], [1.918, 2.028], [2.039, 2.259], [2.27, 2.36], [2.361, 2.481], [2.61, 2.69], [2.73, 2.89], [4.59, 5.19]]}
+  },
+  "default_smooth": {
+    "vanadium_smooth": {"groupSA": {"npoint": 21, "order": 2},
+                        "groupMA": {"npoint": 21, "order": 2},
+                        "groupAA": {"npoint": 21, "order": 2},
+                        "groupHA": {"npoint": 11, "order": 4}},
+    "BG_smooth": {"groupHA": {"npoint": 21, "order": 3},
+                  "groupMA": {"npoint": 21, "order": 3},
+                  "groupAA": {"npoint": 21, "order": 3},
+                  "groupSA": {"npoint": 51, "order": 3}}
+  },
+  "d_rebin": {
+    "mode": "uniform",
+    "groupSA": [
+      0.6076,
+      16,
+      3500
+    ],
+    "groupMA": [
+      0.4342,
+      5,
+      2000
+    ],
+    "groupAA": [
+      0.443,
+      4.8,
+      2000
+    ],
+    "groupHA": [
+      0.3648,
+      3.56,
+      2300
+    ],
+    "bank11":[
+      0.6076,
+      14,
+      3500
+    ],
+    "bank12":[
+      0.4342,
+      5,
+      2000
+    ],
+    "bank13":[
+      0.3648,
+      3.56,
+      2300
+    ],
+    "bank14":[
+      0.3648,
+      3.56,
+      2300
+    ],
+    "bank15":[
+      0.4342,
+      5,
+      2000
+    ],
+    "bank16":[
+      0.6076,
+      14,
+      3500
+    ],
+    "bank17":[
+      0.434,
+      4.8,
+      2000
+    ],
+    "bank18":[
+      0.434,
+      4.8,
+      2000
+    ]
+  },
+  "focus_point": {
+    "groupSA": {
+      "pixel": 111070631,
+      "2_theta": 47.3,
+      "DIFA": 0.0,
+      "DIFB": 0.0,
+      "DIFC": 4804.2,
+      "ZERO": 0.0
+    },
+    "groupMA": {
+      "pixel": 112060631,
+      "2_theta": 89.8,
+      "DIFA": 0.0,
+      "DIFB": 0.0,
+      "DIFC": 8454.3,
+      "ZERO": 0.0
+    },
+    "groupAA": {
+      "pixel": 112060631,
+      "2_theta": 89.8,
+      "DIFA": 0.0,
+      "DIFB": 0.0,
+      "DIFC": 8454.3,
+      "ZERO": 0.0
+    },
+    "groupHA": {
+      "pixel": 114071351,
+      "2_theta": 131,
+      "DIFA": 0.0,
+      "DIFB": 0.0,
+      "DIFC": 10901.5,
+      "ZERO": 0.0
+    }
+  },
+  "rongzai_agent_config": {
+                  "server_host":"10.1.252.95",
+                  "server_port": 22,
+                  "remote_reduced_dir": "/home/dur/rongzai-agent/datasets/BL15/RUNdataFiles",
+                  "web_url": "http://10.1.252.95:8081"},
+  "event_target_directory": "/data1/nexus_data/sliceData/",
+  "event_source_directory": "/dg_expdata/CSNSDATA/TS1/BL15/",
+  "event_source_ip": "dur@10.1.252.95",
+  "event_source_port": 22,
+  "event_source_password": ""
+}
