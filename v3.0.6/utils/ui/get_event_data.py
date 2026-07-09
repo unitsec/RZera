@@ -395,7 +395,7 @@ class get_event_data(CollapsibleWidget):
 
         self.source_password = self.parent.config["base"].get("event_source_password", "")
         if not self.source_password:
-            self.source_password = "kobedu824"
+            QMessageBox.critical(self, "无数据存储服务器密码", "先配置服务器密码，否则无法进行传输。")
 
         self.browse_run = browse()
         self.targetDirectoryButton.clicked.connect(lambda: self.browse_run.select_folder(self.targetDirectoryText))
