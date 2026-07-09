@@ -2,14 +2,14 @@
 # 按照不同的 beamline 设置不同的密码
 
 TRANSFER_PASSWORDS = {
-    "BL01": "BL01@SANS#2024!xK9",
-    "BL05": "BL05$HD_Secure$5pM8",
-    "BL09": "BL09@TREND%Pwd2024#kL",
-    "BL13": "BL13&ERNI$Safe@Pass9T",
-    "BL14": "BL14#VSANS@Secure2024qX",
-    "BL15_small": "BL15$HPND%Pwd#Safe8vD",
-    "BL16": "BL16@MPI&Lock2024$fN",
-    "BL18": "BL18#GPPD@Secure%Pass7jM",
+    "BL01": "********",
+    "BL05": "********",
+    "BL09": "********",
+    "BL13": "********",
+    "BL14": "********",
+    "BL15_small": "********",
+    "BL16": "********",
+    "BL18": "********",
 }
 
 
